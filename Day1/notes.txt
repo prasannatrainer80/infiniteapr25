@@ -165,6 +165,71 @@ protected : Allows you to access members within current/derived class.
 
 friendly : By default java possess friendly access modifier, allows you to access members within all classes of current package. 
 
+int x=12;
+int y = x++ + ++x;
+A  12  + 14
+M  13	14x	
+
+char ch1='A';
+		int x=ch1;
+		System.out.println(x);
+
+		boolean flag = true;
+	 	int x = flag;
+		System.out.println(x);
+
+		int x=12;
+		byte b = x;
+
+		int x=5;
+		int y = x+8*3-2+6;
+		
+		int x;
+		System.out.println(x);
+
+		byte b=125;
+		b+=6;
+		System.out.println(b);
+
+You can create an object to the class, as
+
+class_name obj = new class_name();
+
+Control Structures : Used to define the flow of the program. 
+
+There are 2 types of control structures known as 
+
+	(i) Branching
+
+if...else : Executes the statement(s) based on the condition. 
+
+	if (condition) {
+	   statement(s);
+	} else {
+	   statement(s);
+	}
+
+	(ii) Looping 
+
+1) Write a Program to implement sample current bill as take no.of units as input and calculate bill as
+
+first 90 units 1 rs per unit
+
+91 to 150 units 1.5 rs per unit
+
+151 to 200 units 2 rs per unit
+
+201 to 250 units 2.5 rs per unit
+
+251+ units 3rs per unit 
+
+for example : 
+
+If units are 180 then 
+
+(90*1) + (60 * 1.5) + (30 * 2) 
+
+
 
 
 
