@@ -254,8 +254,16 @@ for "Raj","Keerthana" mentor is Sumanth
     "Santosh","Vidya" mentor is "Murali"
     "Sekhar","John" Mentor is Gayathri
 
+public static void main(String[] args) {
+		int x=12;
+		int y = x++ + ++x + ++x + x++ - --x + x--;
+		System.out.println(y);
+	}
 
 
+int x = 3;
+System.out.println(x == 3 || x < 3);
+System.out.println(x == 3 && x < 3);
 
 
 

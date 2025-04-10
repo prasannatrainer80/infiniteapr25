@@ -1,0 +1,160 @@
+Looping Control Structures : 
+_____________________________
+
+while loop : This loop executes all the statements repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop.
+
+For every loop, basically there are 3 phases known as 
+
+	(i) Initialization
+
+	(ii) Condition
+	
+	(iii) Increment/Decrement 
+
+Initialization performed at the beginning of the loop.
+
+Condition performed at the conditional part of the loop.
+
+Increment/Decrement performed before closing the loop.
+
+while(condition) {
+   statement1
+   statement2;
+}
+
+for loop : this loop executes all the statemens repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. 
+
+for(initialization;condition;increment) {
+   statement(s);
+}
+
+6 -> 1,2,3
+	6
+
+int n = 9;
+
+while (n < 10) {
+   System.out.println("Hi ");
+   n--;
+}
+
+Arrays : An array is the finite ordered set of homogeneous elements, means all the elements belongs to same data type.
+
+All the elements of array are stored in successive memory locations. 
+
+declaration : 
+_____________
+
+	int[] a = new int[]{1,4,22,55,23};
+	a[0]=1;
+	a[1]=4;
+	a[2]=22;
+	a[3]=55;
+	a[4]=23;
+
+	int[] a = new int[]{1,4,22,55,23};
+//		for(int i=0;i<a.length;i++) {
+//			System.out.println(a[i]);
+//		}
+		for (int i : a) {
+			System.out.println(i);
+		}
+
+How internally foreach loop will work ???
+
+At first i points to the first element in array A, after processing first element, it checks next element is there or not by using hasMoreElements(), if hasMoreElements() returns true, it moves to the next element by using nextElement(), it repeats as soon as hasMoreElements() returns true.
+
+int[] a = {1,2,3,4};
+int[] b = a;
+b[2]=9;
+System.out.println(a[2] + " " +b[2]);
+
+There are 2 types of memories as 
+
+Stack
+
+Heap
+
+Value types will be stored in STACK memory, reference types will be stored in HEAP memory. 
+
+Write a Program to find the palindrome words in the given string. 
+
+Write a Program to display any number from 1 to 9999 in roman format. 
+
+int x;
+
+x="Hello";
+x=12;
+x=12.5;
+
+Object x;
+
+Boxing and Unboxing : The concept of converting value types to reference types known as boxing, reference types to value types known as unboxing. 
+
+Object is the type that which can be used for boxing and unboxing. 
+_________________________________________
+Task
+Given an integer, , perform the following conditional actions:
+
+If n  is odd, print Weird
+If n is even and in the inclusive range of 2 to 5, print Not Weird
+If n is even and in the inclusive range of 6 to 20, print Weird
+If  is even and greater than 20, print Not Weird
+Complete the stub code provided in your editor to print whether or not  is weird.
+
+Input Format
+
+A single line containing a positive integer, .
+
+Constraints
+
+Output Format
+
+Print Weird if the number is weird; otherwise, print Not Weird.
+
+Sample Input 0
+
+3
+Sample Output 0
+
+Weird
+Sample Input 1
+
+24
+Sample Output 1
+
+Not Weird
+Explanation
+
+Sample Case 0: 
+ is odd and odd numbers are weird, so we print Weird.
+
+Sample Case 1: 
+ and  is even, so it isn't weird. Thus, we print Not Weird.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
