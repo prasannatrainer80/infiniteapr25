@@ -155,6 +155,17 @@ Explanation
 
 Each String is left-justified with trailing whitespace through the first  characters. The leading digit of the integer is the 16th character, and each integer that was less than 3  digits now has leading zeroes.
 
+Write a Java program which contains string as 
+
+"welcome   to java     Programming thank     you all"
+
+Remove the spaces if its more than 1 
+
+Write a Java program to find the second most frequent character in a given string.
+
+"minimum"
+
+
 
 
 
