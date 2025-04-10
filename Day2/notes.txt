@@ -165,6 +165,21 @@ Write a Java program to find the second most frequent character in a given strin
 
 "minimum"
 
+Write a Java program to print the result of removing duplicates from a given string
+
+example : welcome 
+	  welcom
+	
+ training
+ traing 
+
+Write a java program to find the first non-repeating character in a string
+
+example : kalyankishore 
+ 
+l is the 'first char' not repeated
+
+
 
 
 
