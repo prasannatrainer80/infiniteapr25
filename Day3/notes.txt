@@ -146,7 +146,7 @@ class Hello {
 	}
 }
 
-_________________________________________________________
+__________________________________________________________________
 
 class Test {
 	private Test() {
@@ -190,6 +190,27 @@ class Test {
 	public static void main(String[] args) {
 	   C2 obj = new C2()'
 	}
+}
+
+___________________________________________________________________
+
+super keyword : If you want to pass values from derived class to base class, then we need the help of super keyword. 
+
+It has 2 forms as 
+
+	(i) super as a keyword
+
+	(ii) super as a constructor 
+
+Abstract Class : 
+_________________
+
+A class, that which can be created, but not implemented and instantiated known as abstract class. Abstract class contains abstract and non-abstract methods, abstract methods needs to be overrided mandatorily by the derived class. 
+
+abstract class class_name 
+{
+   abstract method1();
+   abstract method2();
 }
 
 
