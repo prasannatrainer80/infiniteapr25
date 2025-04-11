@@ -1,0 +1,204 @@
+Object class have various method(s) as
+
+toString() -> Which is having string representation, which used to print the member variables of the class. 
+
+Method Overloading : The concept of using the same method name w.r.t. different data types or different parameters known as method overloading.  Here, the method name must be same, but no.of parameters or type of parameters we are using are different. 
+
+class Test {
+     int a,b;
+     a=5;
+     b=7;
+}
+
+Constructors : A constructor is a special member, which used to initialize the member variables of the class, it is special because it has the same name as that of class name. 
+
+Rules : 
+_______
+
+	(i) It will not contains any return type
+	(ii) It will not return any value
+	(iii) It will be invoked automatically once the 		instance of the class created.
+	(iv) A constructor can be overloaded. 
+
+Types of Constructors : 
+________________________
+
+There are 2 types of constructors known as 
+
+static constructor : These are called class constructors, which are used to initialize the static variables of the class, these constructors are invoked automatically before control reaches the entry point. These constructors cannot be overloaded.
+
+instance constructor : These are the constructors that which are invoked automatically once the instance of the class created, these constructors cannot be overloaded. 
+
+In java, we don't have any static constructor, as 
+
+static { } acts as static constructor. 
+
+static variable : These are the variables that which retains values irrespective of type of object. 
+
+Enums : These are the group of constants, that which allows you to enter only fixed set of values to be specified. 
+Enums can be used as user-defined data types also. 
+
+enum enum_name {
+   value1, value2
+}
+
+Inheritance : The concept of deriving a new class from already existing class known as inheritance, the class which derived known as derived class, the class from which its derived known as base class. 
+
+Through inheritance, we can reduce the size of the program. 
+
+class First {
+...
+...
+}
+
+class Second extends First {
+...
+...
+}
+
+Once you create an object to Second class, then you can access all public/protected/friendly members of base class. 
+
+class Hello {
+    public void show(double x) {
+	System.out.println("Double value  " +x);
+    }
+    public void show(Object x) {
+	System.out.println("Object " +x);
+    }
+    public static void main(String[] args) {
+	Hello hello = new Hello();
+	hello.show(12);
+    }
+}
+
+class Hello {
+    public void show(double x) {
+	System.out.println("Double value  " +x);
+    }
+    public void show(Object x) {
+	System.out.println("Object " +x);
+    }
+    public void show(long x) {
+	System.out.println("Long value  " +x);
+    }
+
+    public static void main(String[] args) {
+	Hello hello = new Hello();
+	hello.show(12);
+    }
+}
+
+
+class Hello {
+	public void show(int x) {
+	  System.out.println("Int " +x);
+	}
+	public void show(Object ob) {
+	  System.out.println("Object " +ob);
+	}
+	public static void main(String[] args) {
+	   Hello hello = new Hello();
+	   hello.show('$');
+	}
+}
+_______________________________________________
+
+class Demo {
+	static Demo() {
+	  System.out.println("Static");
+	}
+	Demo() {
+	  System.out.println("Hi");
+	}
+        public static void main() {
+	  new Demo();
+	}
+}
+
+_________________________________________
+class Test {
+  static {
+	System.out.println("Hi");
+  }
+}
+class Hello {
+	static {
+	  System.out.println("Test");
+	}
+	Hello() {
+	  System.out.println("Hello");
+	}
+	public static void main(String[] args) {
+	   Hello hello = new Hello();
+        }
+}
+
+_________________________________________________________
+
+class Hello {
+	int x = 12;
+	public static void increment() {
+	  x++;
+	  System.out.println(x);
+	}
+	public static void main(String[] args) {
+	   increment();	  
+	}
+}
+
+_________________________________________________________
+
+class Test {
+	private Test() {
+	  System.out.println("Test Me");
+	}
+	public static void main(String[] args) {
+	   new Test();
+	}
+}
+
+class Hello {
+	static int count;
+	public void increment() {
+	   count++;
+	}
+	public void show() {
+	  System.out.println(count);
+	}
+	public static void main(String[] args) {
+	   Hello hello1 = new Hello();
+	   Hello hello2 = new Hello();
+	   hello1.increment();
+	   hello2.increment();
+	   hello1.show();
+	   hello2.show();
+	}
+}
+
+class C1 {
+    C1() {
+      System.out.println("C1");
+    }
+}
+
+class C2 extends C1 {
+    public C2() {
+      System.out.println("C2");
+    }
+}
+class Test {
+	public static void main(String[] args) {
+	   C2 obj = new C2()'
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
