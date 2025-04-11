@@ -254,6 +254,8 @@ class Hello implements One, Two, Three {
 }
 
 
+What is the diff between == and equals()
+
 
 
 
