@@ -1,0 +1,70 @@
+Collections : 
+
+Arrays are static data structures, means once they are assigned we cannot alter the size, but if you want to add the elements irrespective of size, then we need the help of collections. 
+
+Collections can grow to any size unlike arrays. 
+
+Collections are from util package. 
+
+Scanner : If you want to take any data from the keyboard, then we need the help of scanner. 
+
+Scanner sc = new Scanner(System.in);
+
+nextInt()
+next()
+nextDouble()
+nextBoolean() 
+nextLine()
+
+In Collections, we have main 3 top level interfaces as
+
+1) List : Used to store list of values. 
+
+2) Set : Allows you to eliminate duplicate entries at the time of display. In this HashSet and LinkedHashSet are falling under set interface. 
+
+3) SortedSet : This interface allows you to sort the elements, TreeSet is falling under SortedSet interface.
+
+Exception in thread "main" java.lang.ClassCastException: class com.java.day4.Employ cannot be cast to class java.lang.Comparable (com.java.day4.Employ is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+	at java.base/java.util.TreeMap.compare(TreeMap.java:1606)
+	at java.base/java.util.TreeMap.addEntryToEmptyMap(TreeMap.java:811)
+	at java.base/java.util.TreeMap.put(TreeMap.java:820)
+	at java.base/java.util.TreeMap.put(TreeMap.java:569)
+	at java.base/java.util.TreeSet.add(TreeSet.java:259)
+	at com.java.day4.SortEmploy.main(SortEmploy.java:10)
+
+Properties : 
+
+Properties provides an opportunity to protect a field in class. If you want to control the internal behaviour of particular field, then we need the help of properties.  Properties are also methods will be used for value type  operations. 
+
+There are various types of properties as 
+
+1) Read-Only  : no Setters
+
+2) Write-Only : No Getters
+
+3) Read/Write  : Both Getters/Setters 
+
+class Hello {
+    public static void show() {
+	 System.out.println("Hi");
+   }
+}
+
+class Test extends Hello {
+   public void show() {
+	System.out.println("Bye");
+   }
+}
+
+main() {
+    new Test().show();
+}
+
+
+
+
+
+
+
+
+
