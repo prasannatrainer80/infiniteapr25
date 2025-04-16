@@ -1,0 +1,49 @@
+Generics Provides an opportunity to pass or define data types at runtime. 
+If you want to make any method as write once and apply for all types, then we need the help of generics. 
+
+The major part of generics used to provide type-safety ensures
+only specific data records to be stored in collection. 
+
+Generics can be represented by using <T> annotation. 
+
+Means, in place of <T> we can pass any value type or
+reference type or custom type. 
+
+If you have different data types to be passed then you can 
+define as 
+
+<T,V> 
+
+Advantages : 
+____________
+
+	-> Write Once and apply for all types
+	-> Provides the security to the data
+	-> No Typecasting Required
+	-> Reduces the size of the program. 
+
+Internally how generics work is, assume you have a method as 
+
+void swap(T a, T b) { .... }
+
+now if you pass 
+
+swap(12,13) -> Generics have feature known as code bloat as JVM
+generics relevant method in memory and gets executed. Means 
+
+swap(int a, int b) method can be called 
+
+swap("Sandhan","Sourav") -> Generics code bloat generate method in memory as
+swap(String a, String b) 
+
+Map interface : This interface is outside the collections framework and used to store values w.r.t. Key/Value pairs. 
+
+Here the key must be unique, and value can be duplicated. 
+
+HashTable and HashMap are falling under Map interface. 
+
+Map<K,V> obj = new HashTable<K,V>();
+
+put() -> This method allows you to add the data into that. 
+
+

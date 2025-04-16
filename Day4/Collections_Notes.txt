@@ -50,15 +50,19 @@ class Hello {
    }
 }
 
-class Test extends Hello {
-   public void show() {
-	System.out.println("Bye");
-   }
-}
 
-main() {
-    new Test().show();
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
