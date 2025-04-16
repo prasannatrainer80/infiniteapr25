@@ -46,4 +46,60 @@ Map<K,V> obj = new HashTable<K,V>();
 
 put() -> This method allows you to add the data into that. 
 
+Exception Handling : 
+_____________________
+
+It is a mechanism of handling the runtime errors during the execution of the program. There are 2 types of errors known as 
+
+	(I) Compile Time 
+
+	(ii) Runtime 
+
+Runtime errors occurs, during runtime if we pass invalid values, the type of errors we are getting known as runtime errors. 
+
+By using Exception Handling, we can overcome the runtime errors. 
+
+To handle exceptions, we have 3 blocks known as 
+
+(I) try block : This block contains statement(s) in which there is possibility of getting runtime errors.  The statement(s) which are placed in this block are treated as heavy weighted statement(s) as JVM allocates excess memory to them. 
+
+(ii) catch block : Once exception raised in try block, then the control will be forwarded to catch block, this block contains alternate statement(s) for exceptions raised in try block, one try block can contains multiple catch blocks. 
+
+(iii) finally block : This block contains statement(s) that needs to be executed mandatorily irrespective of try and catch blocks, this block is not mandatory, but all the statement(s) which are placed in this block are executed as mandatory statements.
+
+Exception is the top most class, from which all kinds of exceptions are derived. 
+
+syntax :
+_________
+
+try {
+...
+...
+...
+} catch (Exception e) {
+...
+...
+...
+} finally {
+...
+...
+...
+}
+
+printStackTrace() : An exception contains 
+
+	-> Exception Class
+	-> Error Message
+	-> Line Number
+	-> Char Pos
+
+All you need to print at once, we need the help of printStackTrace().
+
+
+
+
+
+
+
+
 

@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class UserAuth {
-
 	public static void main(String[] args) {
 		String userName,passCode;
 		Scanner sc = new Scanner(System.in);
