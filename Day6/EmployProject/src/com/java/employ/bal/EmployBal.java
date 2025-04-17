@@ -17,8 +17,23 @@ public class EmployBal {
 		sb = new StringBuilder();
 	}
 	
+	public String deleteEmployBal(int empno) {
+		return employDao.deleteEmployDao(empno);
+	}
+	
+	public Employ searchEmployBal(int empno) {
+		return employDao.searchEmployDao(empno);
+	}
+	
 	public List<Employ> showEmployBal() {
 		return employDao.showEmployDao();
+	}
+	
+	public String updateEmployBal(Employ employ) throws EmployException {
+		if (validateEmploy(employ)==true) {
+			return employDao.updateEmployDao(employ);
+		}
+		throw new EmployException(sb.toString());
 	}
 	
 	public String addEmployBal(Employ employ) throws EmployException {
