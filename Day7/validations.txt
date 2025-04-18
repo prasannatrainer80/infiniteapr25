@@ -1,0 +1,8 @@
+// noOfDays to be calculated automatically in Dao Layer 
+	// leaveStatus by default its PENING
+	
+	// Validations 
+	
+	// 1. LeaveStartDate cannot be Yesterday
+	// 2. LeaveEndDate cannot be Yesterday
+	// 3. LeaveStartDate cannot be greater than LeaveEndDate
