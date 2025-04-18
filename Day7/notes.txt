@@ -1,0 +1,69 @@
+Files : A file is a collection of data, that which allows you to store
+output permanently.  To deal with files, we need the help of java.io package. 
+
+File class : this class allows you to deal with files. 
+
+File obj = new File(filename);
+
+getName()
+getPath()
+getParent()
+
+FileReader : This class allows you to read data w.r.t. Unicode format. 
+
+FileReader fr = new FileReader(filename);
+
+read() -> used to read data char/char and returns ascii value, it returns -1 once it reaches the end of file. 
+
+FileWriter : Allows you to write data into the file. 
+
+FileWriter fw = new FileWriter(filename);
+
+write() -> used to write data into the file. 
+
+FileInputStream : This class allows you to read data w.r.t. Stream of Bytes. 
+
+FileInputStream fin = new FileInputStream(filename);
+
+read() -> Used to read data char/char and returns ascii value, it returns -1 once it reaches the eof. 
+
+FileOutputStream : Used to write data into the file w.r.t. Stream of bytes. 
+
+write() : used to write data into the file.
+
+DataOutputStream : Which allows you to write primitive types into the file. 
+
+DataOutputStream dout = new DataOutputStream(filename);
+
+writeInt()
+writeDouble()
+writeBoolean()
+writeUTF()
+
+DataInputStream : Used to read primitive types from the file. 
+
+readInt()
+readDouble()
+readBoolean()
+readUTF()
+
+BufferedReader : Allows you to read input from the keyboard. 
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+readLine() : used to read one line of input from keyboard. 
+
+ObjectOutputStream : Used to write Objects into the file. 
+
+writeObject() : used to write object into the file. 
+
+Serilization : Is the process of writing user-defined objects into the file. 
+
+This can be done by using Serilizable interface. 
+
+The classs must implement Serilizable interface,it is called marker interface as no methods to be implemented only functionality can be done. 
+
+
+
+
+
