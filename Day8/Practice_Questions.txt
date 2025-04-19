@@ -1,0 +1,186 @@
+class Test extends Hello {
+   public void show() {
+	System.out.println("Bye");
+   }
+}
+
+main() {
+    new Test().show();
+}
+________________________________________________________
+
+
+class Test {
+    public void show(int x) {
+	System.out.println("X is " +x);
+    }
+}
+
+class Hello extends Test {
+    public int show(int x) {
+	return x+5;
+    }
+}
+
+main() {
+     Hello hello = new Hello();
+     System.out.println(hello.show(12));
+}
+
+___________________________________________________
+class A {
+    public void show() {
+	System.out.println("Hi");
+    }
+}
+
+class B {
+    public void show() {
+	System.out.println("Bye");
+    }
+}
+
+main() {
+     A a = (A)new B();
+     a.show();
+} 
+
+_____________________________________________
+
+class Test {
+	public void show(Object ob) {
+	  if (ob=="ABC") {
+	    System.out.println("Hi");
+          } else {
+	     System.out.println("Bye");
+	}
+}
+
+main()
+{
+	Test test=new Test();
+	test.show("ABC");
+}
+
+_____________________________________________________________
+
+class Test extends String {
+	public static void main(String[] args) {
+	   System.out.println("Strings are Immutable...");
+	}
+}
+________________________________________________________________
+
+class Hello {
+    public static void main(String[] args) {
+	  int x =12;
+	  byte b = (Byte)x;
+	  System.out.println(x);
+   }
+}
+
+_____________________________________________________________________
+
+class C1 {
+	static { System.out.println("Static C1"); }
+        C1() { System.out.println("Non-Static C1"); }
+}
+class C2 extends C1 {
+	static { System.out.println("Static C2");}
+	C2() { System.out.println("Not-Static C2");}
+}
+
+main() { new C2(); }
+
+_______________________________________________________________________
+
+class Test {
+	int a,b;
+	Test(int a, int b) {
+	   this.a =a;
+	   this.b = b;
+	}
+        public void show() {
+	   System.out.println(a + " " +b);
+}
+class Hello extends Test {
+	Hello(int a, int b) {
+	   a = 10;
+	   super(a,b);
+	}
+}
+main() { new Hello(12,5).show(); }
+______________________________________________________________________
+class Animal { }
+class Lion extends Animal {}
+class Crocodile extends Animal {}
+
+What kind of relationship it is 
+
+______________________________________________________________________
+
+interface IOne {
+	String company="Infinite";
+}
+
+class Test implements IOne {
+	public static void main(String[] args) {
+	  IOne obj = new Test();
+	  System.out.println(obj.company);
+       }
+}
+
+___________________________________________________________
+
+How to implement an interface to another interface
+
+interface Two implements One
+interface Two extends One
+
+_____________________________________________________________
+
+How to call default method of an interface 
+______________________________________________________________
+
+class Hello {
+    public void show(Integer x) {
+	System.out.println("Integer " +x);
+    }
+    public void show(double x) {
+	System.out.println("Double " +x);
+    }
+    public static void main(String[] args) {
+	new Hello().show(12);
+    }
+}
+________________________________________________________________
+
+class Hello {
+    public void show(Integer x) {
+	System.out.println("Integer " +x);
+    }
+    public void show(double x) {
+	System.out.println("Double " +x);
+    }
+    public static void main(String[] args) {
+	new Hello().show(new Integer(12));
+    }
+}
+
+__________________________________________________________________
+
+public class Singleton {
+    private static volatile Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if (instance == null) {
+                  instance = new Singleton();
+                }
+        }
+        return instance;
+    }
+    main() {
+	Singleton obj1 = Singleton.getInstance();
+	Singleton obj2 = Singleton.getInstance();
+	System.out.println(obj1.hashCode() + "  " +obj2.gethashCode());
+}
