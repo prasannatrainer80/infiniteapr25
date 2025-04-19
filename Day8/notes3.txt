@@ -1,0 +1,148 @@
+Defect
+
+If tester identifies something known as Defect
+
+Bug
+
+If developer accepts defect, known as bug.
+
+*** All Defects are not bugs, but all bugs are defects ***
+
+Error
+
+*** If programmer identifies mistake, known as Error ***
+
+Fatal
+
+*** If Client Identifies something, known as Fatal ***
+
+Validation
+
+Verification
+
+Verification :
+
+   It is a process in which one will check each and every role in the organization in order to confirm whether they are working according to the companies guidelines or not.
+
+Validation :
+
+It is a process of checking the developed application or its related parts inorder to confirm whether they are working accoriding to the requirements or not.
+
+Validation always with product, where verification always with Process...
+
+What is Defect :
+
+A defect is following :-
+
+        -> Any deviation from specification
+-> Anything that causes user dissatisfaction
+-> Incorrect output
+-> Software does not do what it intended to do
+
+Bug/Defect/Error :-
+
+-> Software is said to have bug if it features deviates from specifications
+-> software said to be have defect if it has unwanted side effects.
+-> Software said to be have error if it gives incorrect output.
+
+But for Test engineer all are same as the above definition is only for purpose of documentation.
+
+Type of defects that can be identified in different software applications
+______________________________________________________________________
+
+   1) coding bugs
+   2) Integration bugs.
+   3) Communication
+   4) Command Structure
+   5) Performance
+   6) Output
+   7) Error Handling Errors.
+   8) Boundary-Related Errors
+   9) Calculation errors
+
+DLS (Defect Life Cycle Process)
+
+    The objective of testing is not only to identify defects but we have to report them with a formal defect report and continuously track them till they are successfully resolved.
+
+1) Start DLC
+2)
+ 
+   a) Is It a new Test    
+   b) Is Defect Associated with this test is fixed.
+   c) RePerform ReTesting  
+   
+3)    
+   a) Select the Test Case for Execution
+   b) Ignore this test and move to next.
+   c) Is Defect is Fixed => Y => Defect can be closed {Status=Closed} {DLC Over}
+N => Need to reopen and {Status=ReOpen}
+   
+4)
+a) Analyse Result
+b) Document the result and move to next test
+
+5) Prepare a defect report with Status=New and Send to Dev Team.
+
+6)
+
+   Is It a Defect => N => Status=Rejected  {END DLC}
+7)
+   Is It in Scope => N => Status=Rejected  {END DLC}
+8)
+   Is it already Reported => Y => Status=Duplicated {END DLC}
+   
+9)
+   If Defect Accepted by Deve. Team => y => Status= Open
+   
+10)
+
+   If Dev. Team resolves the defect Status = Fixed
+
+11)
+
+   Release the Modified Build
+
+Defect Status :
+__________________
+
+  1) status = new :
+
+A newly identified defect by the testing team which needs to be confirmance or acceptance from dev. team
+
+  2) Status = rejected :
+ 
+The dev would analysis the defect for its correctness before it is formally accepted but also it can be rejected in any one of the situations
+
+  -> When the posted defect doesn't convey the meaning full situation, when the functinoality is working as per the requirement, when the identified defect is from out of the scope area etc...
+ 
+  -> When the posted defect is already reposted and also it is in open status and hence it is a duplicate.
+ 
+  3)
+ 
+     status = open
+
+The dev. team has formally accepted the defect and the resolution is in progress.
+
+  4)
+ 
+     status =fixed/resolved
+
+The dev team resolved the defect on the modified build and required retesting from the testing team.
+
+  5)
+ 
+      status = closed
+ 
+The Retested defect is completely resolved and hence it is formally closed.
+
+  6)
+ 
+ status = Re-Open
+ 
+If the defect fix is not satisfactory after retesting and also if any closed defect in earlier re exist in the present modified build, due to the changes then it should be reopended.
+
+  7)
+ 
+ status = differed
+ 
+In some situations even if the defect is accepted by develper but he may postpone the defect resolution to the next release after getting conformance from the testing and customer group.

@@ -1,0 +1,14 @@
+Defect : IF tester identifies something known as defect. 
+
+Bug : If developer accepts the defect known as bug. 
+
+Error : If programmer identifies some mistake in your code known as error.
+
+Fatal : If client identifies mistake known as fatal.
+
+Validation
+
+Verification 
+
+
+

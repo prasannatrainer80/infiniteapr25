@@ -1,0 +1,186 @@
+Quality :
+
+Quality is defined as justification of All requirements of a customer on  a product.
+
+It is defined as not only as justifications of requirements, but also the presence of value (user-friendliness).
+
+Quality is not defined in the product it is defined in the customers mind.
+
+Testing :
+
+     It is a process in which the defects are identified, isolaed and sunjected for rectification and ensures that the product is defect free inorder to producre the quality of product in the end and hence leads to customer satisfaction.
+
+The proof of testing phase is a quality product.
+
+Test Case :  
+___________
+
+   It is an idea of a test engineer to test something on an application based on the requirements.
+   
+Testing Methodologies :
+
+   1) Black Box Testing
+   
+If one performs testing only onn the final part of an application without having the knowledge of structual part that method of testing is known as Black Box Testing (Testing an application without prior knkowledge on the domain/app known as Black Box Testing).
+
+   2) White Box Testing
+   
+If one performs testing on the structural part w.r.t. Domain Knowledge and applciation flow known as white box testing. Usually developers will d the white box testing.
+
+   3) Grey Box Testing
+   
+         It is a method of testing in which one will perform testing on both the final part of as welll as the structual part of an applciation, USually the test engineers who has teh additional knowledge of structual part will be involved in grey box testing.
+
+   
+   Levels of Testing :
+   ____________________
+   
+      1) Unit Testing
+ 
+Unit is defined as smallest part of an application, usually the programmers are involved in unit testing.
+ 
+ 2) Integration Testing
+ 
+In this level, the developers will be developing the interfaces inn order to integrate the modules, those interfaces will be tested in order to check whether the combined application is running successfully or not.
+ 
+ 3) User Acceptance Testing
+ 
+ In this level of testing, the test engineers will check the user desired areas in the prsenece of user inorder to make him accept the application.
+ 
+  SDLC (Software Development Life Cycle)
+
+      SDLC should result in a high quality system that meets or exceeds customer expectations, within time and cost estimates, works effectively and efficiently in the current and planned information technology infrastructure, and is cheap to maintain and cost-effective to enhance.
+
+  SDLC contains different phases as
+    ___________________________________
+
+1) Requirements Gathering
+
+Every SW complany project should start with this stage where teh customers expectations for which the software to be developed are gathered.
+
+  The Stakeholders or the Customers/Clients are interviewed for gathering the information at the initial level, which would include the following questions.
+ 
+a) Business Vision, Strategy, Objectives, Goals and Key Success factors.
+b) key Business issues and their impact
+c) Current problem or triggering opportunity.
+d) Responsiveness to market changes and needs.
+e) Key information to make business decisions.
+
+The proof for this Phase is BRS Document (Business Req. Specification)
+
+2) Feasibility Analysis : This is the analysis phase where the project outline will be analysed w.r.t. Timelines, TeamSize and WHich platform and Software to be used etc...  
+
+The proof for this phase is SRS (System Requirement Specification)
+
+3) Design
+
+This is the heart for the project, as the starting point, and flow and ending point w.r.t. all phases are desingned here, the proof for this is either GUI or UML diagram.
+
+ here we have 2 levels of designing known as
+ 
+   a) High Level Designing
+b) Low Level Designing
+
+CA (Chief Architect) will do the high level designing
+
+TL (Team Lead) will do the low level designing.
+
+4) Coding : This belongs to develpers part,
+
+5) Testing : (Black Box Testing)
+ UAT (User Acceptance Testing)
+
+6) Release & Maintenance
+
+What is Verification and Validation
+___________________________________
+
+Verification :
+
+   It is a process in which one will check each and every role in the organization in order to confirm whether they are working according to the companies guidelines or not.
+
+Validation :
+
+It is a process of checking the developed application or its related parts inorder to confirm whether they are working accoriding to the requirements or not.
+
+*** Verification is for checking the process and Validation is for Checking the Product ***
+
+For this we have a model known as V model.
+
+As the verfication and validation are done and test management process is followed, the outcome will be a quality product.
+
+Drawbacks :
+___________
+
+  1) Time Consuming
+ 
+  2) Costly Model
+ 
+Severity :
+
+  It ensures that the seriousness of the bug. It is classified into 4 types as
+ 
+ a) Fatal Sev 1 S1 1
+ 
+if at all the problems are related to navigational blocks or unavailable major functionality then such type of defects are treated as fatal defects.
+ 
+ b) Major :Sev 2 S2 2
+ 
+    If at all the major functionality not working accoint to the expectation then such type of defects are treated as major defects.
+ 
+ c) Minor : Sev 3 S3 3
+ 
+If at all the problems related to the look and feel these are minor bugs.
+ 
+ d) Suggestions : Sev 4 S4 4
+ 
+If at all the problems are related to the value of the applciatino then such type of defects are treated as suggestions (Ex : Any spelling/grammer mistakes in the given applciation)
+
+   Why Test :
+___________
+
+   -> Developers not failable
+   
+   -> Bugs in compilers, languages, DBS and OS etc...
+   
+   -> Certains bugs easier to find in testing
+   
+   -> Don't want customers to find bugs.
+   
+   -> Post release debugging is expensive
+   
+   -> Good test design is challenging and rewarding.
+   
+Principles of Testing :
+_______________________
+
+   -> All tests should be traceable to requirements
+   
+   -> Most of the defects are uncovered at the initial stages by using reviews
+   
+   -> Testing should be done in an outward manner
+   
+SDLC defines the phases that describe Software cycle and the order in which those phases are executed.  There are differnet data models are available
+
+   1) Water Fall Model
+
+This is the most common and classif of life cycle models, known as linear-sequential life cycle model.  It is very simple to understand and use.  In this each phase must be completed before it goes to the next phase, and you cannot come back to previous phase.  At the end of each phase, a review takes place to determine if the project is on the right path and wheter or not to continue or discard the project.
+
+Advantages :
+_____________
+
+(a) Simple and easy to use
+(b) Easy to manage due to the rigidity of the model - each phase has specific deliverables and a review process
+(c) Phases are processesd and completed one at a time.
+(d) Works well for smaller projects where requirements are very well understood.
+
+Disadvantages :
+_______________
+
+(a) Adjusting scope during the life cycle can kill a project.
+(b) No working software is produced until late during the life cylce.
+(c) High amount of risk.
+(d) Poor model for complex and object-oriented projects.
+(e) Poor model where requirements are at a moderate to high risk of changing.
+
+

@@ -1,0 +1,34 @@
+A thread is a sequential execution of path of program. In multi-threading more than one task can be performed in a single program simultaneously.  If you want to make best utilization of CPU resources, then we need the help of multi-threading. 
+
+Idle time kept to minimum. 
+
+In multi-threading we have various methods as
+
+1) start() -> Used to invoke the thread.
+
+2) run() -> Once start() invokes the code in run() gets fired
+
+3) sleep() -> Makes a thread to wait for specific milliseconds time. 
+
+Yo can create a thread in 2 ways as 
+
+1) extends Thread
+
+2) implements Runnable 
+
+Synchronization : If two or more threads trying to access same resource at same time, it leads to strange results.  To overcome this, unless one thread leaves the particular location another thread will not be entered. 
+
+https://repo.maven.apache.org/maven2/archetype-catalog.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
