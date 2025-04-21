@@ -1,0 +1,21 @@
+OrderInfo
+
+	orderId
+	customerId
+	menuId
+	itemName
+	orderDate
+	price
+	quantityOrdered
+	billAmount
+	orderComments 
+
+--> orderId to be generated automatically (don't use static concept) 
+--> billAmount to be calculated automatically 
+--> orderDate cannot be yesterday
+
+--> Add Order (PlaceOrder)
+--> Show Customer Order (take input as custId) and show orders
+-> Edit Order
+-> Delete Order
+-> Search Order 
