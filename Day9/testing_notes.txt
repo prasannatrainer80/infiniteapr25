@@ -1,0 +1,27 @@
+Unit testing : This testing can be done by developers, as each and every unit of the code needs to be tested thoroughly. 
+
+Junit allows you to implement unit testing. 
+
+we need to use package 
+
+org.junit.test
+
+You can test the methods, by using 
+
+assert statement as
+
+assertEquals(expected, actual)
+assertArrayEquals()
+
+each test case methods needs to be prefixed with @Test annotation. 
+
+In Junit, we have various annotations as
+
+1) @BeforeClass : This annotated method is static method, will be called automatically before the program starts.  
+
+2) @AfterClass :This annotated method will be called before the end of program, this method will be called only once. 
+
+3) @Before  : this annotated method will be called everytime, before the test case begin. 
+
+4) @After : This annotated method will be called everytime, at the end of test case.
+
