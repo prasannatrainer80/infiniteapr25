@@ -1,0 +1,74 @@
+JDK 8 Features : 
+________________
+
+1) Lambda Expression
+2) Functional Interface
+3) foreach method
+4) Streams
+5) Method References 
+
+Lambda Expression allows you to write clear and concise code, that makes the application readable and easy to implement. 
+
+syntax : 
+
+() -> { body }
+
+these are similar to macros concept in c/c++ 
+
+int[] a ={1,2,3};
+System.out.println(a[10]);
+
+
+Method Reference : 
+
+int a =5;
+int b =a;
+
+interface ITest {
+   void show();
+}
+
+void display() {
+   System.out.println("Hello");
+}
+
+show = display;
+
+1) Display all products
+
+2) Display Sort By Product Name
+
+3) Display sort by Price
+
+4) Display product search using Optional
+
+5) Display max/min priced items 
+
+
+create two interfaces as 
+
+interface IStr1 {
+    String toLower(String str);
+}
+
+interface IStr2 {
+    String toUpper(String str);
+}
+
+implement ur own methods to perform upper() and lower() and map to them
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
