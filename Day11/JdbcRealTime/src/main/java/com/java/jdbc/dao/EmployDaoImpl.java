@@ -10,6 +10,7 @@ import java.util.List;
 import com.java.jdbc.model.Employ;
 import com.java.jdbc.model.Gender;
 import com.java.jdbc.util.ConnectionHelper;
+import com.java.jdbc.util.EncryptPassword;
 
 public class EmployDaoImpl implements EmployDao {
 
@@ -103,6 +104,32 @@ public class EmployDaoImpl implements EmployDao {
 		psmt.setInt(6, employUpdated.getEmpno());
 		psmt.executeUpdate();
 		return "Employ Record Updated...";
+	}
+
+	@Override
+	public String addUser(String user, String pwd) throws ClassNotFoundException, SQLException {
+		String encr = EncryptPassword.getCode(pwd);
+		String cmd = "insert into Login values(?,?)";
+		connection = ConnectionHelper.getConnection();
+		psmt = connection.prepareStatement(cmd);
+		psmt.setString(1, user);
+		psmt.setString(2, encr);
+		psmt.executeUpdate();
+		return "User Account Created...";
+	}
+
+	@Override
+	public int authenticate(String user, String pwd) throws ClassNotFoundException, SQLException {
+		String encr = EncryptPassword.getCode(pwd);
+		String cmd = "select count(*) cnt from Login where userName=? and passCode=?";
+		connection = ConnectionHelper.getConnection();
+		psmt = connection.prepareStatement(cmd);
+		psmt.setString(1, user); 
+		psmt.setString(2, encr);
+		ResultSet rs = psmt.executeQuery();
+		rs.next();
+		
+		return rs.getInt("cnt");
 	}
 
 }
