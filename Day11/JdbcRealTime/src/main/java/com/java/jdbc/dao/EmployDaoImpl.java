@@ -57,4 +57,19 @@ public class EmployDaoImpl implements EmployDao {
 		return employ;
 	}
 
+	@Override
+	public String addEmployDao(Employ employ) throws ClassNotFoundException, SQLException {
+		String cmd = "Insert into Employ(empno,name,gender,dept,desig,basic) values(?,?,?,?,?,?)";
+		connection = ConnectionHelper.getConnection();
+		psmt = connection.prepareStatement(cmd);
+		psmt.setInt(1, employ.getEmpno());
+		psmt.setString(2, employ.getName());
+		psmt.setString(3, employ.getGender().toString());
+		psmt.setString(4, employ.getDept());
+		psmt.setString(5, employ.getDesig());
+		psmt.setDouble(6, employ.getBasic());
+		psmt.executeUpdate();
+		return "Employ Record Inserted...";
+	}
+
 }
