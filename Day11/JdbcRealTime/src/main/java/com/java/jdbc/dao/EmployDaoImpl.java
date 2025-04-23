@@ -72,4 +72,37 @@ public class EmployDaoImpl implements EmployDao {
 		return "Employ Record Inserted...";
 	}
 
+	@Override
+	public String deleteEmployDao(int empno) throws ClassNotFoundException, SQLException {
+		Employ employFound = searchEmployDao(empno);
+		if (employFound !=null) {
+			String cmd = "Delete from Employ where Empno = ?";
+			connection = ConnectionHelper.getConnection();
+			psmt = connection.prepareStatement(cmd);
+			psmt.setInt(1, empno);
+			psmt.executeUpdate();
+			return "Employ Record Deleted...";
+		}
+		return "Employ Record Not Found...";
+	}
+
+	@Override
+	public String updateEmployDao(Employ employUpdated) throws ClassNotFoundException, SQLException {
+		Employ employFound = searchEmployDao(employUpdated.getEmpno());
+		if (employFound==null) {
+			return "Employ Record Not Found...";
+		}
+		String cmd = "Update Employ set Name = ?, Gender = ?, Dept = ?, Desig = ?, Basic = ? Where empno = ?";
+		connection = ConnectionHelper.getConnection();
+		psmt = connection.prepareStatement(cmd);
+		psmt.setString(1, employUpdated.getName());
+		psmt.setString(2, employUpdated.getGender().toString());
+		psmt.setString(3, employUpdated.getDept());
+		psmt.setString(4, employUpdated.getDesig());
+		psmt.setDouble(5, employUpdated.getBasic());
+		psmt.setInt(6, employUpdated.getEmpno());
+		psmt.executeUpdate();
+		return "Employ Record Updated...";
+	}
+
 }
