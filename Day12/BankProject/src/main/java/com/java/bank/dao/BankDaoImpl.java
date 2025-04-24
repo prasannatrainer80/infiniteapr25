@@ -65,4 +65,25 @@ public class BankDaoImpl implements BankDao {
 		return accounts;
 	}
 
+	@Override
+	public String depositAccount(int accountNo, double depositAmount) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		Accounts accounts = searchAccount(accountNo);
+		if (accounts!=null) {
+			String cmd = "Update Accounts Set Amount = Amount + ? Where AccountNo = ?";
+			psmt = connection.prepareStatement(cmd);
+			psmt.setDouble(1, depositAmount);
+			psmt.setInt(2, accountNo);
+			psmt.executeUpdate();
+			cmd = "Insert into Trans(AccountNo,TransAmount,TransType) values(?,?,?)";
+			psmt = connection.prepareStatement(cmd);
+			psmt.setInt(1, accountNo);
+			psmt.setDouble(2, depositAmount);
+			psmt.setString(3, "C");
+			psmt.executeUpdate();
+			return "Amount Credited...";
+		}
+		return "Account No Not Found...";
+	}
+
 }

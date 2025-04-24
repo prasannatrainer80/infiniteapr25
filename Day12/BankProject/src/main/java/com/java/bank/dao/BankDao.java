@@ -8,5 +8,6 @@ public interface BankDao {
 	
 	String createAccount(Accounts accounts) throws ClassNotFoundException, SQLException;
 	Accounts searchAccount(int accountNo) throws ClassNotFoundException, SQLException;
+	String depositAccount(int accountNo, double depositAmount) throws ClassNotFoundException, SQLException;
 	
 }
