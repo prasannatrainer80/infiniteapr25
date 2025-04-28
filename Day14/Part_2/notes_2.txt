@@ -1,0 +1,221 @@
+CSS Flexbox
+CSS3 Flexible boxes also known as CSS Flexbox, is a new layout mode in CSS3.
+
+The CSS3 flexbox is used to make the elements behave predictably when they are used with different screen sizes and different display devices. It provides a more efficient way to layout, align and distribute space among items in the container.
+
+It is mainly used to make CSS3 capable to change its item?s width and height to best fit for all available spaces. It is preferred over block model.
+
+The CSS3 flexbox contains flex containers and flex items.
+
+Flex container:The flex container specifies the properties of the parent. It is declared by setting the display property of an element to either flex or inline-flex.
+
+Flex items:The flex items specify properties of the children. There may be one or more flex items inside a flex container.
+
+CSS Flexbox Layout Module
+Before the Flexbox Layout module, there were four layout modes:
+
+Block, for sections in a webpage
+Inline, for text
+Table, for two-dimensional table data
+Positioned, for explicit position of an element
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+.flex-container {
+  display: flex;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>The flex-direction Property</h1>
+
+<p>The "flex-direction: column;" stacks the flex items vertically (from top to bottom):</p>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+</body>
+</html>
+
+
+.flex-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>The flex-wrap Property</h1>
+
+<p>The "flex-wrap: wrap;" specifies that the flex items will wrap if necessary:</p>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>  
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>  
+</div>
+
+<p>Try resizing the browser window.</p>
+
+</body>
+</html>
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>The justify-content Property</h1>
+
+<p>The "justify-content: space-around;" displays the flex items with space before, between, and after the lines:</p>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+</body>
+</html>
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  color: white;
+  width: 100px;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+
+<h1>Perfect Centering</h1>
+
+<p>A flex container with both the justify-content and the align-items properties set to <em>center</em> will align the item(s) in the center (in both axis).</p>
+
+<div class="flex-container">
+  <div></div>
+</div>
+
+</body>
+</html>
+
+
+
+

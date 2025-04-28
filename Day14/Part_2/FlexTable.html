@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+           body {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: Arial;
+            }
+            .main-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                margin: 0;
+                justify-content: center;
+                align-items: center;
+                background-color: #fafafa;
+            }
+            .table-container {
+                display: flex;
+                flex-flow: column nowrap;
+                background-color: white;
+                width: 80%;
+                margin: 0 auto;
+                border-radius: 4px;
+                border : 1px solid black;
+            }
+            .table-row {
+                display: flex;
+                flex-flow: row nowrap;
+                width: 100%;
+                border-bottom: 1px solid red;
+            }
+            .heading {
+                font-weight: bold;
+            }
+            .row-item {
+                display: flex;
+                flex : 1;
+                font-size: 14px;
+                padding: 8px;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+<body>
+    <div class="main-container">
+        <div class="table-container">
+            <div class="table-row heading">
+                <div class="row-item">Student No</div>
+                <div class="row-item">Student Name</div>
+                <div class="row-item">Gender</div>
+                <div class="row-item">City</div>
+                <div class="row-item">Cgpa</div>
+            </div>
+            <div class="table-row">
+                <div class="row-item">1</div>
+                <div class="row-item">Komal</div>
+                <div class="row-item">Male</div>
+                <div class="row-item">Hyderabad</div>
+                <div class="row-item">9.2</div>
+            </div>
+            <div class="table-row">
+                <div class="row-item">2</div>
+                <div class="row-item">Yamini</div>
+                <div class="row-item">Female</div>
+                <div class="row-item">Hyderabad</div>
+                <div class="row-item">8.7</div>
+            </div>
+            <div class="table-row">
+                <div class="row-item">3</div>
+                <div class="row-item">Abhilash</div>
+                <div class="row-item">Male</div>
+                <div class="row-item">Delhi</div>
+                <div class="row-item">9.0</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
