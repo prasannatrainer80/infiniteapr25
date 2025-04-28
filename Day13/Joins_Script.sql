@@ -1,4 +1,4 @@
-use infinitepractice;
+use infinite;
 
 drop table if exists agentpolicy;
 

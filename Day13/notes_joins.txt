@@ -1,0 +1,34 @@
+Joins : Used to extract data from more than one table.  There are various types of joins as
+
+	(i) Inner Join :Used to extract only the common records from the given tables. 
+
+	(ii) Outer Join : There are various types of outer joins as 
+
+		-> Left Join : All records from the left-side table, and matching records from the right-side table.
+
+		-> Right Join : All records from the right-side table, and matching records from the left-side table. 
+
+	if any child table record not there, then it would be replaced with null keyword. 
+
+	(iii) Cross Join
+
+	(iv) Self Join : If a table joins with itself known as self join. 
+
+Subqueries : Sometimes, it is not possible to extract data by using single select statement, to overcome this we need the help of subqueries.  
+A subquery is a query, that which is having another query inside. The query which is inside known as inner query, the query which is outside known as outer query. Everytime, the result of inner query will be send as input to the outer query.
+
+-- Display max salary from emp 
+
+If a subquery returns more than one row, then we can handle by using
+
+
+ALL -> Acts as AND operator 
+
+Empno <> ALL(10,20,30) means empno <> 10 AND empno <> 20 AND empno <> 30
+
+ANY -> Acts as OR Operator 
+
+Empno = ANY(10,20,30) means Empno = 10 OR Empno = 20 OR Empno = 30
+
+
+
