@@ -35,4 +35,14 @@
     <servlet-name>EmploySearchServlet</servlet-name>
     <url-pattern>/EmploySearchServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployInsertServlet</display-name>
+    <servlet-name>EmployInsertServlet</servlet-name>
+    <servlet-class>com.java.serv.EmployInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployInsertServlet</servlet-name>
+    <url-pattern>/EmployInsertServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
