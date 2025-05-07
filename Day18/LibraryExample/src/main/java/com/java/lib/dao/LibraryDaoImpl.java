@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.java.lib.model.Books;
 import com.java.lib.model.LibUsers;
+import com.java.lib.model.TranBook;
 import com.java.lib.util.ConnectionHelper;
 import com.java.lib.util.EncryptPassword;
 
@@ -113,6 +114,25 @@ public class LibraryDaoImpl implements LibraryDao {
 		} else {
 			return "Book Id " +bookId+ " for User " +userName + " Already Issued...";
 		}
+	}
+
+	@Override
+	public List<TranBook> accountDetails(String userName) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		String cmd = "select * from tranbook where username = ?";
+		psmt = connection.prepareStatement(cmd);
+		psmt.setString(1, userName);
+		ResultSet rs = psmt.executeQuery();
+		List<TranBook> booksIssued = new ArrayList<TranBook>();
+		TranBook tranBook = null;
+		while(rs.next()) {
+			tranBook = new TranBook();
+			tranBook.setBookId(rs.getInt("BookId"));
+			tranBook.setUserName(rs.getString("UserName"));
+			tranBook.setFromDate(rs.getDate("FromDate"));
+			booksIssued.add(tranBook);
+		}
+		return booksIssued;
 	}
 
 }
