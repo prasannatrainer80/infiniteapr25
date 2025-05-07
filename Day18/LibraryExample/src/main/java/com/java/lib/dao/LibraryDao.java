@@ -7,4 +7,5 @@ import com.java.lib.model.LibUsers;
 public interface LibraryDao {
 
 	String createUser(LibUsers libUsers) throws ClassNotFoundException, SQLException;
+	int login(LibUsers libUsers) throws ClassNotFoundException, SQLException;
 }
