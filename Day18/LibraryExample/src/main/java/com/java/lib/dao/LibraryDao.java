@@ -14,4 +14,5 @@ public interface LibraryDao {
 	List<Books> searchBooks(String searchType, String searchValue) throws ClassNotFoundException, SQLException;
 	String issueBook(String userName, int bookId) throws ClassNotFoundException, SQLException;
 	List<TranBook> accountDetails(String userName) throws ClassNotFoundException, SQLException;
+	String returnBook(String userName, int bookId) throws ClassNotFoundException, SQLException;
 }

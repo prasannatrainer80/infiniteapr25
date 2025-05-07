@@ -1,6 +1,7 @@
 package com.java.lib.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -133,6 +134,37 @@ public class LibraryDaoImpl implements LibraryDao {
 			booksIssued.add(tranBook);
 		}
 		return booksIssued;
+	}
+
+	@Override
+	public String returnBook(String userName, int bookId) throws ClassNotFoundException, SQLException {
+		String cmd = "SELECT * FROM TranBook WHERE Username = ? and BookId = ?";
+		connection = ConnectionHelper.getConnection();
+		psmt = connection.prepareStatement(cmd);
+		psmt.setString(1, userName);
+		psmt.setInt(2, bookId);
+		ResultSet rs = psmt.executeQuery();
+		rs.next();
+		Date fromDate = rs.getDate("fromDate");
+		
+		String sql2 = " INSERT INTO TransReturn(UserName,BookId,FromDate) VALUES (?,?,?)" ;
+		psmt = connection.prepareStatement(sql2);
+		psmt.setString(1,userName);
+		psmt.setInt(2,bookId);
+		psmt.setDate(3,fromDate);
+		psmt.executeUpdate();
+		
+		String sql1 = "DELETE FROM TranBook WHERE BookId = ? AND Username = ? " ;
+		psmt = connection.prepareStatement(sql1);
+		psmt.setInt(1,bookId);
+		psmt.setString(2,userName);
+		psmt.executeUpdate();
+		
+		String sql3 = "Update Books set TotalBooks = TotalBooks + 1 where Id = ?";
+		psmt = connection.prepareStatement(sql3);
+		psmt.setInt(1, bookId);
+		psmt.executeUpdate();
+		return "Book with Id " +bookId + " For User " +userName + " Returned Successfully...";
 	}
 
 }
