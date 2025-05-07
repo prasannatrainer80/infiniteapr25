@@ -1,0 +1,15 @@
+Create One table as AdminLogin
+Once AdminLogin happens
+
+He need to do following operation as 
+
+1) Add Book 
+
+2) Check If any user not return book in 21 days
+
+then once he/she returns apply 5rs fine for one extra day
+
+3) Check any user not supposed to take more than 4 books 
+
+4) Ensure if noOfCopies are 1, then say this book is not for issue. 
+
