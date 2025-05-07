@@ -17,6 +17,20 @@ public class LibraryDaoImpl implements LibraryDao {
 	Connection connection;
 	PreparedStatement psmt;
 	
+	
+	
+	public int issueOrNot(String userName, int bookId) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		String sql = "select count(*) cnt from TranBook where UserName=? and BookId=?";
+		psmt = connection.prepareStatement(sql);
+		psmt.setString(1, userName);
+		psmt.setInt(2, bookId);
+		ResultSet rs = psmt.executeQuery();
+		rs.next();
+		int count =rs.getInt("cnt");
+		return count;
+	}
+	
 	@Override
 	public String createUser(LibUsers libUsers) throws ClassNotFoundException, SQLException {
 		String encr = EncryptPassword.getCode(libUsers.getPassWord());
@@ -79,6 +93,26 @@ public class LibraryDaoImpl implements LibraryDao {
 			booksList.add(books);
 		}
 		return booksList;
+	}
+
+	@Override
+	public String issueBook(String userName, int bookId) throws ClassNotFoundException, SQLException {
+		int count = issueOrNot(userName, bookId);
+		if (count==0) {
+			connection = ConnectionHelper.getConnection();
+			String sql = "Insert into TranBook(UserName,BookId) values(?,?)";
+			psmt = connection.prepareStatement(sql);
+			psmt.setString(1, userName);
+			psmt.setInt(2, bookId);
+			psmt.executeUpdate();
+			sql="Update Books set TotalBooks=TotalBooks-1 where id=?";
+			psmt = connection.prepareStatement(sql);
+			psmt.setInt(1, bookId);
+			psmt.executeUpdate();
+			return "Book with Id " +bookId + " Issued Successfully...";
+		} else {
+			return "Book Id " +bookId+ " for User " +userName + " Already Issued...";
+		}
 	}
 
 }
