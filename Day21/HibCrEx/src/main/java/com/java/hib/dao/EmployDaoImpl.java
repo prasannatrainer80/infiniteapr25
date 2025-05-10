@@ -8,9 +8,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import com.java.hib.model.Employ;
+import com.java.hib.model.Login;
+import com.java.hib.util.EncryptPassword;
 
 public class EmployDaoImpl implements EmployDao {
 
@@ -64,6 +67,32 @@ public class EmployDaoImpl implements EmployDao {
 		session.delete(employ);
 		trans.commit();
 		return "Employ Record Deleted...";
+	}
+
+	@Override
+	public Login authenticate(String user, String pwd) {
+		String encr = EncryptPassword.getCode(pwd);
+		sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+		session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		cr.add(Restrictions.eq("userName", user));
+		cr.add(Restrictions.eq("passCode", encr));
+		Login login = (Login)cr.uniqueResult();
+		System.out.println("Login is " +login);
+		return login;
+	}
+
+	@Override
+	public int login(String user, String pwd) {
+		String encr = EncryptPassword.getCode(pwd);
+		sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+		session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Login.class);
+		cr.add(Restrictions.eq("userName", user));
+		cr.add(Restrictions.eq("passCode", encr));
+		cr.setProjection(Projections.rowCount());
+		int  count =(Integer)cr.uniqueResult();
+		return count;
 	}
 
 }
