@@ -9,7 +9,7 @@ create table Employee
    empid int primary key auto_increment,
    firstName varchar(30),
    lastName varchar(30),
-   userName varchar(30),
+   userName varchar(30) UNIQUE,
    passCode varchar(255),
    email varchar(30),
    status varchar(30) default 'inactive'
