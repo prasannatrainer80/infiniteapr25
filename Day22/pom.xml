@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>infinite</groupId>
-    <artifactId>HibNamedQueries</artifactId>
+    <artifactId>HibMailOtpExample</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>HibNamedQueries</name>
+    <name>HibMailOtpExample</name>
 
     <build>
-        <finalName>HibNamedQueries</finalName>
+        <finalName>HibMailOtpExample</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -43,7 +43,12 @@
     </dependencyManagement>
 
     <dependencies>
-           <dependency>
+       <dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version>
+</dependency>
+    <dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>jstl</artifactId>
 		<version>1.2</version>
