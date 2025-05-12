@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-Sep-2023, 3:38:07 pm by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+		 <class name="com.java.hib.model.Employee" table="EMPLOYEE">
+		   <id name="empId" type="int">
+            <column name="EMPID" />
+            <generator class="increment" />
+           </id>
+          <property name="firstName" type="java.lang.String">
+       	     <column name="FIRSTNAME" />
+        	</property>
+           <property name="lastName" type="java.lang.String">
+       	     <column name="LASTNAME" />
+        	</property>
+		     <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="passCode" type="java.lang.String">
+            <column name="PASSCODE" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+		 </class>
+</hibernate-mapping>
