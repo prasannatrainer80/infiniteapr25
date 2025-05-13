@@ -12,10 +12,11 @@
     </head>
     <body>
         <h:form>
-	<h:outputText value="Welcome to JSF Programming..." />     
-	<br/><br/>
-	Program Code Result is : <b>
-	<h:outputText value="#{demo.sayHello()}" />       </b>
+	<h:outputLabel value="User Name" />
+ <h:inputText id="userName" value="#{login.userName}"/><br>	
+ <h:outputLabel value="PassWord " />
+<h:inputSecret  id="passCode" value="#{login.passCode}"/><br>	
+	<h:commandButton action="#{loginDao.validateMe(login.userName,login.passCode)}" value="Login" />
         </h:form>
     </body>
 </html>
