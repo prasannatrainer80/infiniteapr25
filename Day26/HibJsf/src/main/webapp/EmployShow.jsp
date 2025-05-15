@@ -9,6 +9,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+      <jsp:include page="Menu.jsp"/>
         <h:form>
         <center>
                 <h2><h:outputText value="Employ Records"/></h2>

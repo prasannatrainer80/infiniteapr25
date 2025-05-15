@@ -34,4 +34,12 @@ public class EmployController {
 	public String searchEmploy(int empno) {
 		return employDao.searchEmployDao(empno);
 	}
+	
+	public String addEmploy(Employ employ) {
+		return employDao.addEmploy(employ);
+	}
+	
+	public List<Employ> showEmployListByDept(String dept) {
+		return employDao.getEmployListByDept(dept);
+	}
 }

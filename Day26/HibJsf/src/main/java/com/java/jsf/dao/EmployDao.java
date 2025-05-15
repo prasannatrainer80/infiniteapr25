@@ -10,4 +10,6 @@ public interface EmployDao {
 	List<Employ> showEmployDao();
 	String searchEmployDao(int empno);
 	String validate(Login login);
+	List<Employ> getEmployListByDept(String dept);
+	String addEmploy(Employ employ);
 }

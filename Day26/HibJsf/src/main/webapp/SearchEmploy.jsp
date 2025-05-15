@@ -9,6 +9,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+      <jsp:include page="Menu.jsp"/>
         <h:form>
         	Employ No : 
         	<h:outputText value="#{employFound.empno}" />
