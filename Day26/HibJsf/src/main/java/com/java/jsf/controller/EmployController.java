@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.java.jsf.dao.EmployDao;
 import com.java.jsf.model.Employ;
+import com.java.jsf.model.Login;
 
 public class EmployController {
 
@@ -23,6 +24,9 @@ public class EmployController {
 		this.employ = employ;
 	}
 	
+	public String validate(Login login) {
+		return employDao.validate(login);
+	}
 	public List<Employ> showEmploy() {
 		return employDao.showEmployDao();
 	}
