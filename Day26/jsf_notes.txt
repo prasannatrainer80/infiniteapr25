@@ -1,0 +1,89 @@
+JSF defines the javax.faces.context.FacesContext abstract base class for representing all of the contextual information associated with processing an incoming request, and creating the corresponding response.
+
+A FacesContext instance is created by the JSF implementation, prior to beginning the request processing lifecycle, by a call to the getFacesContext method of FacesContextFactory, as described in Section 6.6 “FacesContextFactory”.
+
+When the request processing lifecycle has been completed, the JSF implementation will call the release method, which gives JSF implementations the opportunity to release any acquired resources, as well as to pool and recycle FacesContext instances rather than creating new ones for each request.
+
+__________________________________________________________
+
+Here's a clear and concise JSF FacesContext tutorial to help you understand and work with it effectively.
+
+🔷 What is FacesContext in JSF?
+FacesContext is a central class in JavaServer Faces (JSF) that holds all per-request state information. It acts as a context object for a single request and is used to:
+
+Access HTTP request and response objects.
+
+Interact with managed beans.
+
+Manage messages (like validation or custom messages).
+
+Control navigation and rendering.
+
+🔹 Common Use Cases
+Accessing Request Parameters
+
+Adding Messages to the UI
+
+Navigation Control
+
+Session and Application Map Access
+
+FacesContext facesContext = FacesContext.getCurrentInstance();
+String param = facesContext.getExternalContext().getRequestParameterMap().get("myParam");
+✅ 2. Add Message to the UI
+FacesContext.getCurrentInstance().addMessage(null,
+    new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Data saved successfully!"));
+This message will be displayed using:
+<h:messages globalOnly="true" />
+✅ 3. Redirect Programmatically
+FacesContext context = FacesContext.getCurrentInstance();
+ExternalContext externalContext = context.getExternalContext();
+externalContext.redirect("anotherPage.xhtml");
+✅ 4. Access Session Attributes
+ExternalContext extContext = FacesContext.getCurrentInstance().getExternalContext();
+Map<String, Object> sessionMap = extContext.getSessionMap();
+sessionMap.put("user", myUserBean); // Save in session
+✅ 5. Navigation (Without Redirect)
+FacesContext.getCurrentInstance().getApplication()
+    .getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "home");
+<navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-outcome>home</from-outcome>
+        <to-view-id>/home.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+____________________________________________________________
+
+JSF FacesContext
+FacesContext is an abstract class in javax.faces.context package. 
+
+It is the gateway for JSF technology. 
+
+When you send a request for a Facelets for the first time then FacesServlet will create an object of FacesContext at the beginning of the request processing. For each request new FacesContext object will be created. It is passed to each phase of the request processing lifecycle, and potentially modified by each phase of the request processing lifecycle. 
+
+FacesContext will create a component tree for the Facelets and the component tree will be displayed to the client. 
+
+All the information related to the request processing will be stored in the FacesContext object. 
+
+Each JSF application must store information about the request it is processing. The FacesContext holds all contextual information necessary for processing a request and generating a response. More specifically, it manages a queue for messages, the current component tree, application configuration objects, and the life-cycle flow control methods. It also provides generic access to the external context in which the JSF application is running (which in most cases will be the servlet container environment or context).  
+
+The FacesContext is basically a wrapper around the servlet context (ServletContext, Request, Response, Session.., and are made available through what is called the ExternalContext). Additionally the FacesContext provides per request state and information specific to JSF. So, for each request there is one and only one FacesContext available (as per its static nature), and can be accessed with: FacesContext.getCurrentInstance(); 
+
+FecesServlet uses the FacesContext object to store the following request related information.  
+
+ViewRoot object 
+
+Error message related to conversions and validations. 
+
+Renderer kit information. 
+
+Response complete status. 
+
+ExternalContext object. 
+
+JSF ExternalContext
+You will sometimes wish to interact with the external environment in which our JSF implementation runs. This environment is usually a servlet context (for Web applications), but it may also be a Portlet or other container. The FacesContext provides generic access to the external environment via the getExternalContext() method. It returns an ExternalContext object that provides access to the external environment via a standard interface. Object of ExternalContext will be used at event handling. ExternalContext object has methods to obtain request, response, cookie objects etc….
+
+ 
