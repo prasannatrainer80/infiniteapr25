@@ -1,0 +1,23 @@
+drop database if exists canteen;
+
+create database canteen;
+
+use canteen;
+
+create table Restaurant
+(
+   RestaurantId INT Primary key auto_increment,
+   RestaurantName varchar(30),
+   City varchar(30),
+   rating numeric(9,2),
+   flag ENUM('VEG','NONVEG')
+);
+
+Create Table Menu
+(
+   Menuid INT Primary Key Auto_increment,
+   ItemName varchar(30),
+   Price numeric(9,2),
+   RestaurantId INT REFERENCES Restaurant(RestaurantId),
+   rating numeric(9,2)
+)
