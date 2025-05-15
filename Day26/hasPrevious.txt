@@ -1,0 +1,60 @@
+import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.SessionScoped;
+import jakarta.annotation.PostConstruct;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+@ManagedBean
+@SessionScoped
+public class EmployController implements Serializable {
+
+    private List<Employ> allEmploys;
+    private List<Employ> pageEmploys;
+
+    private int page;
+    private int pageSize = 5;
+
+    @PostConstruct
+    public void init() {
+        // Dummy data; replace with DB call
+        allEmploys = new ArrayList<>();
+        for (int i = 1; i <= 50; i++) {
+            allEmploys.add(new Employ(i, "Name" + i, "Male", "IT", "Engineer", 5000 + i));
+        }
+        updatePage();
+    }
+
+    public void updatePage() {
+        int from = page * pageSize;
+        int to = Math.min(from + pageSize, allEmploys.size());
+        pageEmploys = allEmploys.subList(from, to);
+    }
+
+    public void next() {
+        if ((page + 1) * pageSize < allEmploys.size()) {
+            page++;
+            updatePage();
+        }
+    }
+
+    public void previous() {
+        if (page > 0) {
+            page--;
+            updatePage();
+        }
+    }
+
+    // Getters
+    public List<Employ> getPageEmploys() {
+        return pageEmploys;
+    }
+
+    public boolean isHasNext() {
+        return (page + 1) * pageSize < allEmploys.size();
+    }
+
+    public boolean isHasPrevious() {
+        return page > 0;
+    }
+}
