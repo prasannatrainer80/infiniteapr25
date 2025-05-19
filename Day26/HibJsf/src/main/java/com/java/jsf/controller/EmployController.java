@@ -2,6 +2,7 @@ package com.java.jsf.controller;
 
 import java.lang.reflect.Field;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.java.jsf.dao.EmployDao;
@@ -25,6 +26,39 @@ public class EmployController {
 	            ascending = true;
 	        }
 	    }
+	    
+//	    public void sortBy(String field) {
+//	        Comparator<Employ> comparator = null;
+//
+//	        switch (field) {
+//	            case "empno":
+//	                comparator = Comparator.comparing(Employ::getEmpno);
+//	                break;
+//	            case "name":
+//	                comparator = Comparator.comparing(Employ::getName);
+//	                break;
+//	            case "gender":
+//	                comparator = Comparator.comparing(Employ::getGender);
+//	                break;
+//	            case "dept":
+//	                comparator = Comparator.comparing(Employ::getDept);
+//	                break;
+//	            case "desig":
+//	                comparator = Comparator.comparing(Employ::getDesig);
+//	                break;
+//	            case "basic":
+//	                comparator = Comparator.comparing(Employ::getBasic);
+//	                break;
+//	        }
+//
+//	        if (comparator != null) {
+//	            if (!ascending) {
+//	                comparator = comparator.reversed();
+//	            }
+//	            Collections.sort(employList, comparator);
+//	            ascending = !ascending; // toggle for next click
+//	        }
+//	    }
 
 	    private void sortList() {
 	        if (sortField == null || employList == null) return;

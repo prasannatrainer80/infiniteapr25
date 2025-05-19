@@ -1,0 +1,35 @@
+drop database if exists hms;
+
+create database hms;
+
+create table Doctor
+(
+   doctorId varchar(30),
+   doctorName varchar(30),
+   specialization ENUM('HEART','SKIN','GENERAL','KIDNEY'),
+   location varchar(30),
+   mobileNo varchar(20),
+   isStatus ENUM('ACTIVE','INACTIVE')
+);
+
+-- AddDoctor,ShowDoctor,ShowByCategory,SearchByDoctorID 
+
+Create Table Patient
+(
+    PatientId varchar(30),
+    PatientName varchar(30),
+    DoctorId varchar(30) REFERENCES Doctor(DoctorId),
+    DateOfBirth Date
+);
+
+-- ShowPatientById, ShowPatientByDoctorId
+
+Create Table MedicationHistory
+(
+    MedId varchar(30),
+    PatientId varchar(30) references Patient(patientId), 
+    Medicines varchar(30),
+    Tests varchar(30)
+);
+
+-- ShowPatientMedicalHistory, ShowPatientTests, AddMedicalHistory
