@@ -1,0 +1,12 @@
+com\java\ejb\JndiLookup.class
+com\java\ejb\CalculationRemote.class
+com\java\jsf\MyResource.class
+com\java\jsf\Employ.class
+com\java\jsf\Calculator.class
+com\java\jsf\CalculationNew.class
+com\java\jsf\EmployDAOImpl.class
+com\java\jsf\Demo.class
+com\java\jsf\Login.class
+com\java\jsf\LoginDao.class
+com\java\ejb\RemoteCalculator.class
+com\java\jsf\Calculation.class
