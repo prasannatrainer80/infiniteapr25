@@ -1,0 +1,45 @@
+Properties jndiProperties = new Properties();
+        jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, 
+          "org.jboss.naming.remote.client.InitialContextFactory");
+        jndiProperties.put(Context.URL_PKG_PREFIXES, 
+          "org.jboss.ejb.client.naming");
+        jndiProperties.put(Context.PROVIDER_URL, 
+           "http-remoting://localhost:8080");
+        jndiProperties.put("jboss.naming.client.ejb.context", true);  Please explain the code
+
+
+This Java code snippet sets up the JNDI (Java Naming and Directory Interface) properties needed to connect to a remote EJB (Enterprise Java Bean) hosted on a JBoss (WildFly) application server. Let's break it down line by line:
+
+Code Explanation
+
+Properties jndiProperties = new Properties();
+Creates a Properties object to hold configuration settings for the JNDI context.
+
+jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, 
+  "org.jboss.naming.remote.client.InitialContextFactory");
+Specifies the InitialContextFactory to use for JNDI lookups.
+
+InitialContextFactory is a class that creates an initial context for JNDI naming operations.
+
+Here, it tells JNDI to use JBoss's remote client implementation for accessing remote EJBs.
+
+jndiProperties.put(Context.URL_PKG_PREFIXES, 
+  "org.jboss.ejb.client.naming");
+This property defines the URL package prefixes to be used when parsing JNDI names.
+
+org.jboss.ejb.client.naming is the package that provides JNDI naming conventions for EJBs in JBoss.
+
+jndiProperties.put(Context.PROVIDER_URL, 
+   "http-remoting://localhost:8080");
+This is the URL of the remote JBoss server.
+
+http-remoting:// is a protocol used by JBoss for remote communication.
+
+localhost:8080 means it's connecting to a JBoss server running locally on port 8080.
+
+jndiProperties.put("jboss.naming.client.ejb.context", true);
+Enables the EJB client context feature in JBoss.
+
+This allows you to perform EJB lookups using the ejb: namespace (instead of full JNDI names).
+
+It simplifies EJB access and enables client-side load balancing and failover in more advanced setups.
