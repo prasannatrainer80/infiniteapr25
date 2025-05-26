@@ -1,9 +1,11 @@
 package com.java.jsf.controller;
 
 import java.lang.reflect.Field;
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
+import com.java.ejb.EmployEjbImpl;
 import com.java.jsf.dao.EmployDao;
 import com.java.jsf.model.Employ;
 import com.java.jsf.model.Login;
@@ -12,8 +14,26 @@ public class EmployController {
 
 	private EmployDao employDao;
 	private Employ employ;
+	private com.java.ejb.Employ ejbEmploy;
+	private EmployEjbImpl employEjbImpl;
 	
-	 private String sortField;
+	 public com.java.ejb.Employ getEjbEmploy() {
+		return ejbEmploy;
+	}
+
+	public void setEjbEmploy(com.java.ejb.Employ ejbEmploy) {
+		this.ejbEmploy = ejbEmploy;
+	}
+
+	public EmployEjbImpl getEmployEjbImpl() {
+		return employEjbImpl;
+	}
+
+	public void setEmployEjbImpl(EmployEjbImpl employEjbImpl) {
+		this.employEjbImpl = employEjbImpl;
+	}
+
+	private String sortField;
 	    private boolean ascending = true;
 	    private  List<Employ> employList;
 	    
@@ -63,6 +83,10 @@ public class EmployController {
 	     sortList();
 		return employList;
 //		return employDao.showEmployDao();
+	}
+	
+	public String addEmployEjb(com.java.ejb.Employ employ) throws ClassNotFoundException, SQLException {
+		return employEjbImpl.addEmployEjb(employ);
 	}
 	
 	public String searchEmploy(int empno) {
