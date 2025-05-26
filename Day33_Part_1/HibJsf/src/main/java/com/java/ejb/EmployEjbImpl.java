@@ -56,7 +56,7 @@ public class EmployEjbImpl {
 			  return null;
 		  }
 		  remote.addEmploy(employ);
-			return "EmployDaoTable?faces-redirect=true";
+			return "EmployShow?faces-redirect=true";
 //		SessionFactory sf = SessionHelper.getConnection();
 //		Session session = sf.openSession();
 //		Transaction trans = session.beginTransaction();

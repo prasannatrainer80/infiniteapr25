@@ -56,7 +56,7 @@ public class EmployEjbImpl {
 			  return null;
 		  }
 		  remote.addEmploy(employ);
-			return "EmployDaoTable?faces-redirect=true";
+			return "EmployShow?faces-redirect=true";
 //		SessionFactory sf = SessionHelper.getConnection();
 //		Session session = sf.openSession();
 //		Transaction trans = session.beginTransaction();
@@ -68,12 +68,12 @@ public class EmployEjbImpl {
 	
 	public String addEmployEjb(Employ employ) throws ClassNotFoundException, SQLException {
 		remote.addEmploy(employ);
-		return "EmployDaoTable?faces-redirect=true";
+		return "EmployShow?faces-redirect=true";
 	}
 	
 	public String deleteEmployEjb(int empno) throws ClassNotFoundException, SQLException {
 		remote.deleteEmploy(empno);
-		return "EmployDaoTable?faces-redirect=true";
+		return "EmployShow?faces-redirect=true";
 	}
 	
 	public String updateEmployEjb() throws ClassNotFoundException, SQLException {
@@ -83,7 +83,7 @@ public class EmployEjbImpl {
 //		Employ employFound = remote.searchEmploy(empno);
 		remote.updateEmploy(employUpdated);
 //		 sessionMap.put("employFound", employFound);
-		 return "EmployDaoTable?faces-redirect=true";
+		 return "EmployShow?faces-redirect=true";
 	}
 	public List<Employ> showEmployEjb() throws NamingException, ClassNotFoundException, SQLException {
 //	 EmployJdbcBeanRemote remote = RemoteHelper.lookupRemoteStatelessEmploy();

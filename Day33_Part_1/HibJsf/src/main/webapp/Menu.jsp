@@ -16,5 +16,7 @@
 	  <a href="AddEmploy.jsf">Add Employ</a>
 	    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 	  <a href="AddEmployEjb.jsf">Add Employ Ejb</a>
+	     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	  <a href="AddEmployEjbValid.jsf">Add Employ Ejb</a>
 <hr/>
 </html>
