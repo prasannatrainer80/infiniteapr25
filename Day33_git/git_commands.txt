@@ -1,0 +1,40 @@
+https://github.com/prasannatrainer80/infinitegit
+
+How to download files from git repository 
+
+git clone : This command allows you to download files from the repository. 
+
+git add : This command Used to add files to staging area. 
+
+git add . : Used to make all changes to the staging area (new files/updated )
+
+git commit -m "message" : Used to add the files to the local repo. (Here message is mandatory, please give meaningful messages of commit) 
+
+git push : This command used to add files to remote repo. 
+
+git push origin <branch_name>
+
+git push origin main : used to make changes permananent in main branch
+
+git status : Used to display status about ur cur. git repo
+
+git diff : Used to see the difference between old commit (vs) new commit
+
+git checkout <filename> : Used to cancel the changes on the file. 
+
+git branch branch_name : used to create a branch 
+
+git checkout branch_name : Used to switch to the branch
+
+git checkout -b branch_name : Used to create a branch and change to branch
+
+git branch -D branch_name : Used to remove the branch
+
+git remote update : Used to get updates from remote (shows all branches created on remote)
+
+git pull origin branch_name : Used to get updates from corresponding branch
+
+
+
+
+
