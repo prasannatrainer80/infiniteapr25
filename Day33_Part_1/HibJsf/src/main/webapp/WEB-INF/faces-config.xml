@@ -19,6 +19,16 @@
     <managed-bean-class>com.java.jsf.model.Login</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
 </managed-bean>
+<managed-bean>
+	<managed-bean-name>ejbEmploy</managed-bean-name>
+    <managed-bean-class>com.java.ejb.Employ</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>employEjbImpl</managed-bean-name>
+    <managed-bean-class>com.java.ejb.EmployEjbImpl</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
 
 <managed-bean>
 <managed-bean-name>employController</managed-bean-name>
@@ -33,6 +43,16 @@
             <property-name>employ</property-name>
             <property-class>com.java.jsf.model.Employ</property-class>
             <value>#{employ}</value>
+    </managed-property>
+    <managed-property>
+            <property-name>ejbEmploy</property-name>
+            <property-class>com.java.ejb.Employ</property-class>
+            <value>#{ejbEmploy}</value>
+    </managed-property>
+    <managed-property>
+            <property-name>employEjbImpl</property-name>
+            <property-class>com.java.ejb.EmployEjbImpl</property-class>
+            <value>#{employEjbImpl}</value>
     </managed-property>
 </managed-bean>
 </faces-config>
