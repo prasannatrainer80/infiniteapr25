@@ -1,0 +1,441 @@
+Steps to Create Stateless/Stateful in single project 
+_____________________________________________________
+
+1) Create an EJB Project and name as EjbSessionBeans
+
+2) Create Resources folder in that add db.properties file and write the below connection string
+driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/infinitepractice
+user=root
+password=root
+
+3) In META-INF folder of EJB project, create a file as jboss-deployment-structure.xml and write the below code in that 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="com.mysql" />
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
+
+4) Create a package as com.java.ejb.model and write 
+Gender.java and Employ.java in that 
+
+5) Create a package as com.java.ejb.dao and write Code for 
+
+ConnectionHelper.java
+EmployDao.java
+EmployDaoImpl.java
+
+Then we need to create session Beans, as first create stateless bean and write code 
+
+6) Create a class as EmployStatelessBean and remote class as 
+	EmployStatelessBeanRemote classes and 
+
+write the below code in EmployStatelessBeanRemote.java 
+
+package com.java.ejb.beans;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import com.java.ejb.model.Employ;
+
+@Remote
+public interface EmployStatelessBeanRemote {
+	List<Employ> showEmploy() throws ClassNotFoundException, SQLException;
+	Employ searchEmploy(int empno) throws ClassNotFoundException, SQLException;
+}
+
+Write the below code in EmployStatelessBean.java 
+
+package com.java.ejb.beans;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+
+import com.java.ejb.dao.EmployDAO;
+import com.java.ejb.dao.EmployDAOImpl;
+import com.java.ejb.model.Employ;
+
+/**
+ * Session Bean implementation class EmployStatelessBean
+ */
+@Stateless
+@Remote(EmployStatelessBeanRemote.class)
+public class EmployStatelessBean implements EmployStatelessBeanRemote {
+	
+	static EmployDAO daoImpl;
+	
+	static {
+		daoImpl = new EmployDAOImpl();
+	}
+    /**
+     * Default constructor. 
+     */
+    public EmployStatelessBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public List<Employ> showEmploy() throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return daoImpl.showEmployDao();
+	}
+
+	@Override
+	public Employ searchEmploy(int empno) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return daoImpl.searchEmployDao(empno);
+	}
+
+}
+
+Now, create one statefulBean with Name as EmployStateFulBean and Remote as
+EmployStateFulBeanRemote
+
+Write the below code in EmployStateFulBeanRemote.java 
+
+package com.java.ejb.beans;
+
+import java.sql.SQLException;
+import javax.ejb.Remote;
+import com.java.ejb.model.Employ;
+
+@Remote
+public interface EmployStatefulBeanRemote {
+	String addEmploy(Employ employ) throws ClassNotFoundException, SQLException;
+	String deleteEmploy(int empno) throws ClassNotFoundException, SQLException;
+	String updateEmploy(Employ employ) throws ClassNotFoundException, SQLException;
+}
+
+Write the below code in EmployStateFulBean.java 
+
+package com.java.ejb.beans;
+
+import java.sql.SQLException;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Remote;
+import javax.ejb.Stateful;
+
+import com.java.ejb.dao.EmployDAO;
+import com.java.ejb.dao.EmployDAOImpl;
+import com.java.ejb.model.Employ;
+
+/**
+ * Session Bean implementation class EmployStatefulBean
+ */
+@Stateful
+@Remote(EmployStatefulBeanRemote.class)
+public class EmployStatefulBean implements EmployStatefulBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+	
+	
+	static EmployDAO daoImpl;
+	
+	static {
+		daoImpl = new EmployDAOImpl();
+	}
+
+    public EmployStatefulBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public String addEmploy(Employ employ) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return daoImpl.addEmployDao(employ);
+	}
+
+	@Override
+	public String deleteEmploy(int empno) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return daoImpl.deleteEmployDao(empno);
+	}
+
+	@Override
+	public String updateEmploy(Employ employ) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return daoImpl.updateEmployDao(employ);
+	}
+
+}
+
+Now please run the application, and check 2 JNDI created 
+
+___________________________________________________________________________
+
+Now, create one web application name as "JsfEjbClient" and add the below dependencies
+
+      <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+<dependency>
+    <groupId>com.sun.faces</groupId>
+    <artifactId>jsf-api</artifactId>
+    <version>2.2.20</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
+<dependency>
+    <groupId>com.sun.faces</groupId>
+    <artifactId>jsf-impl</artifactId>
+    <version>2.2.14</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+    <dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-api</artifactId>
+    <version>7.0</version>
+    <scope>provided</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.wildfly/wildfly-ejb-client-bom -->
+<dependency>
+    <groupId>org.wildfly</groupId>
+    <artifactId>wildfly-ejb-client-bom</artifactId>
+    <version>26.1.1.Final</version>
+    <type>pom</type>
+</dependency>
+
+Then Update web.xml file 
+Now, faces-config.xml file write the below code
+
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee /WEB-INF/schema/web-facesconfig_2_0.xsd" 
+              version="2.0" metadata-complete="false">
+    <!-- This file must be present with our jar, even if it is empty.  Otherwise, our Java annotations won't get scanned! -->
+<managed-bean>
+	<managed-bean-name>ejbImpl</managed-bean-name>
+   <managed-bean-class>com.java.jsf.EmployEjbStatelessImpl</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>ejbStateful</managed-bean-name>
+   <managed-bean-class>com.java.jsf.EmployEjbStatefulImpl</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>employ</managed-bean-name>
+   <managed-bean-class>com.java.ejb.model.Employ</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+</faces-config>
+
+2) create a package as com.java.ejb.model and write Employ.java and Gender.java
+
+3) create a package as com.java.ejb.beans and in that copy the 2 files from server application 
+
+EmployStatelessBeanRemote.java
+EmployStatefulBeanRemote.java
+
+Create RemoteStatelessHelper.java and write the below code
+package com.java.ejb.beans;
+
+import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class RemoteStatelessHelper {
+
+
+
+	private static Context createInitialContext() throws NamingException {
+        Properties jndiProperties = new Properties();
+        jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, 
+          "org.jboss.naming.remote.client.InitialContextFactory");
+        jndiProperties.put(Context.URL_PKG_PREFIXES, 
+          "org.jboss.ejb.client.naming");
+        jndiProperties.put(Context.PROVIDER_URL, 
+           "http-remoting://localhost:8080");
+        jndiProperties.put("jboss.naming.client.ejb.context", true);
+        return new InitialContext(jndiProperties);
+    }
+	   public static EmployStatelessBeanRemote lookupRemoteStatelessEmploy() throws NamingException {
+		   Context ctx = createInitialContext();
+	        // The app name is the application name of the deployed EJBs. This is typically the ear name
+	        // without the .ear suffix. However, the application name could be overridden in the application.xml of the
+	        // EJB deployment on the server.
+	        // Since we haven't deployed the application as a .ear, the app name for us will be an empty string
+	    //    final String appName = "";
+	        // This is the module name of the deployed EJBs on the server. This is typically the jar name of the
+	        // EJB deployment, without the .jar suffix, but can be overridden via the ejb-jar.xml
+	        // In this example, we have deployed the EJBs in a jboss-as-ejb-remote-app.jar, so the module name is
+	        // jboss-as-ejb-remote-app
+	      //  final String moduleName = "EJBModule";
+	        // AS7 allows each deployment to have an (optional) distinct name. We haven't specified a distinct name for
+	        // our EJB deployment, so this is an empty string
+	        final String distinctName = "";
+	        // The EJB name which by default is the simple class name of the bean implementation class
+	        final String beanName = "EmployStatelessBean";
+	        System.out.println(beanName);
+	        // the remote view fully qualified class name
+	   //     System.out.println(RemoteCalculator.class.getName());
+	        final String viewClassName = EmployStatelessBeanRemote.class.getName();
+	        // let's do the lookup
+	   //     String namespace="ejb:/HelloWorldEJB!com.ejb.HelloWorld";
+	     //   return (RemoteCalculator) context.lookup("ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName);
+	        String appName = "";
+            String moduleName = "EjbSessionBeans";
+          //  String distinctName = "";
+           // String beanName = CalculatorBean.class.getSimpleName();
+           // String viewClassName = RemoteCalculator.class.getName();
+            return (EmployStatelessBeanRemote) ctx.lookup("ejb:" 
+              + appName + "/" + moduleName 
+              + "/" + distinctName + "/" + beanName + "!" + viewClassName);
+	    }
+
+}
+
+Create one file as RemoteStatefulHelper.java and write the below code 
+
+package com.java.ejb.beans;
+
+import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class RemoteStatefulHelper {
+
+
+
+	private static Context createInitialContext() throws NamingException {
+        Properties jndiProperties = new Properties();
+        jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, 
+          "org.jboss.naming.remote.client.InitialContextFactory");
+        jndiProperties.put(Context.URL_PKG_PREFIXES, 
+          "org.jboss.ejb.client.naming");
+        jndiProperties.put(Context.PROVIDER_URL, 
+           "http-remoting://localhost:8080");
+        jndiProperties.put("jboss.naming.client.ejb.context", true);
+        return new InitialContext(jndiProperties);
+    }
+	   public static EmployStatefulBeanRemote lookupRemoteStatefulEmploy() throws NamingException {
+		   Context ctx = createInitialContext();
+		   EmployStatefulBeanRemote bean = (EmployStatefulBeanRemote) ctx.lookup(
+				    "ejb:/EjbSessionBeans/EmployStatefulBean!com.java.ejb.beans.EmployStatefulBeanRemote?stateful"
+				);
+		   return bean;
+	      
+	    }
+}
+
+4) In com.java.jsf package create 2 files as 
+EmployEjbStatelessImpl.java and EmployEjbStatefulImpl.java 
+
+in EmployEjbStatelessImpl.java write the below code
+
+package com.java.jsf;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import javax.faces.context.FacesContext;
+import javax.naming.NamingException;
+
+import com.java.ejb.beans.EmployStatelessBeanRemote;
+import com.java.ejb.beans.RemoteStatelessHelper;
+import com.java.ejb.model.Employ;
+
+public class EmployEjbStatelessImpl {
+
+	static EmployStatelessBeanRemote remote;
+	static {
+		try {
+			remote = RemoteStatelessHelper.lookupRemoteStatelessEmploy();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public List<Employ> showEmployEjb() throws NamingException, ClassNotFoundException, SQLException {
+//	 EmployJdbcBeanRemote remote = RemoteHelper.lookupRemoteStatelessEmploy();
+	 return remote.showEmploy();
+	}
+	
+	public String searchEmployEjb(int empno) throws ClassNotFoundException, SQLException {
+		Map<String,Object> sessionMap = 
+				FacesContext.getCurrentInstance().getExternalContext().getSessionMap();		
+
+		Employ employFound = remote.searchEmploy(empno);
+		 sessionMap.put("employFound", employFound);
+		 return "updateEmploy?faces-redirect=true";
+	}
+	
+	
+}
+
+5) In EmployEjbStatefulImpl.java write the below code 
+
+package com.java.jsf;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import javax.faces.context.FacesContext;
+import javax.naming.NamingException;
+
+import com.java.ejb.beans.EmployStatefulBeanRemote;
+import com.java.ejb.beans.RemoteStatefulHelper;
+import com.java.ejb.model.Employ;
+
+public class EmployEjbStatefulImpl {
+
+	static EmployStatefulBeanRemote remote;
+	
+	static {
+		try {
+			remote = RemoteStatefulHelper.lookupRemoteStatefulEmploy();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
+	public String addEmployEjb(Employ employ) throws ClassNotFoundException, SQLException {
+		remote.addEmploy(employ);
+		return "EmployDaoTable?faces-redirect=true";
+	}
+		
+	public String deleteEmployEjb(int empno) throws ClassNotFoundException, SQLException {
+		remote.deleteEmploy(empno);
+		return "EmployDaoTable?faces-redirect=true";
+	}
+	
+	public String updateEmployEjb() throws ClassNotFoundException, SQLException {
+		Map<String,Object> sessionMap = 
+				FacesContext.getCurrentInstance().getExternalContext().getSessionMap();		
+		Employ employUpdated = (Employ)sessionMap.get("employFound");
+//		Employ employFound = remote.searchEmploy(empno);
+		remote.updateEmploy(employUpdated);
+//		 sessionMap.put("employFound", employFound);
+		 return "EmployDaoTable?faces-redirect=true";
+	}
+}
+
+Write the relevant code in jsp pages and run the project
+
+
+
