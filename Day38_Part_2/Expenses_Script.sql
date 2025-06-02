@@ -2,16 +2,18 @@ drop database if exists expenses;
 
 create database expenses;
 
+use expenses;
+
 create table users
 (
-   userId int primary key,
+   userId int primary key AUTO_INCREMENT,
    userName varchar(30),
    email varchar(30)
 );
 
 create table TravelGroup
 (
-    groupId INT auto_increment,
+    groupId INT auto_increment primary key,
     createdBy INT REFERENCES Users(userId),
     groupName varchar(30),
     startDate Date,
@@ -21,7 +23,7 @@ create table TravelGroup
 
 create Table GroupMembers
 (
-   gmId INT AUTO_INCREMENT,
+   gmId INT AUTO_INCREMENT primary key,
    groupId INT REFERENCES TravelGroup(groupId),
    userId INT,
    amountCollected numeric(9,2)
@@ -29,7 +31,7 @@ create Table GroupMembers
 
 Create Table Expenses
 (
-    expId INT AUTO_INCREMENT,
+    expId INT AUTO_INCREMENT primary key,
     groupId INT REFERENCES TravelGroup(groupId),
     expenseDate Date, 
     expenseDescription varchar(30),
