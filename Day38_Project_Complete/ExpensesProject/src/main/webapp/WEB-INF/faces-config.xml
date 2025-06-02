@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee /WEB-INF/schema/web-facesconfig_2_0.xsd" 
+              version="2.0" metadata-complete="false">
+    <!-- This file must be present with our jar, even if it is empty.  Otherwise, our Java annotations won't get scanned! -->
+<managed-bean>
+	<managed-bean-name>users</managed-bean-name>
+    <managed-bean-class>com.java.jsf.Users</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>dailyExpenses</managed-bean-name>
+    <managed-bean-class>com.java.jsf.DailyExpenses</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>travelGroup</managed-bean-name>
+    <managed-bean-class>com.java.jsf.TravelGroup</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>groupMembers</managed-bean-name>
+    <managed-bean-class>com.java.jsf.GroupMembers</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+	<managed-bean-name>userDao</managed-bean-name>
+    <managed-bean-class>com.java.jsf.UserDaoImpl</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+</faces-config>

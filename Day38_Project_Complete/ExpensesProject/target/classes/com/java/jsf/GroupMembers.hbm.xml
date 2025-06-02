@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-Oct-2023, 9:34:49 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.java.jsf.GroupMembers" table="GroupMembers">
+        <id name="gmId" type="int">
+            <column name="gmId" />
+            <generator class="identity" />
+        </id>
+        <property name="groupId" type="int">
+            <column name="groupId" />
+        </property>
+        <property name="userId" type="int">
+            <column name="userId" />
+        </property>
+        <property name="amountCollected" type="double">
+            <column name="amountCollected" />
+        </property>
+    </class>
+</hibernate-mapping>
