@@ -1,0 +1,12 @@
+1) Admin Details
+2) Employ Details
+3) Asset Details
+4) Assign Asset to Employ
+5) Return Asset by Employ
+6) DashBoard
+
+__________________________
+
+Admin Login
+Employ Login
+
