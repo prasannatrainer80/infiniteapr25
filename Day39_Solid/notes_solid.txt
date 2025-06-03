@@ -1,0 +1,72 @@
+In SDLC, Object Oriented Programming places vital role when it comes to writing flexible, scalable, maintainable and resuable code. 
+
+To ensure Object Oriented Design follows SOLID principles for good object-oriented programming.
+
+The SOLID principle introduced by C. Martin 
+
+1) S -> Single Responsibilty Principle (SRP)
+
+2) O -> Open/Closed Principle 
+
+3) L -> Liskov's Substitution Principle (LSP)
+
+4) I  -> Interface Segregation Principle (ISP)
+
+5) D  -> Dependency Inversion Principle (DIP)
+
+1) Single Responsibility Principle Means
+	A class should have only one reason to change means every class will have single responsibility or single job or single purpose. We cannot deviate from actual purpose. 
+
+2) Open/Closed Priniciple 
+
+	This principle states that Software entities (classes, methods, modules) should be open
+	for extension, but closed for modification, which means you should be able to extend
+	the class behavior without modifying it.
+
+For Example : Assume, you have Electricity Billing System implemented previously it accepts only DebitCard and NetBanking, now after extension it will accept PhonePe also, 
+
+to achieve above thing, instead of modifying NetBanking and DebitCard code, we are creating sepeate class as PhonePe, as NetBanking and DebitCard classes are closed for modification. 
+
+Liskov's Substitution Principle 
+
+	Derived classes must be substitutable for their parent classes. 
+
+Ensures that any class that is the child of parent class should be usable in place of parent without overriding the code. 
+
+Objects of superclass should be replaceable with objects of subclass
+without affecting the correctness of the program.
+
+
+Interface Segregation Principle : 
+__________________________________
+
+This principle only applies to interfaces but not to classes, it is 
+similar to Single Responisibility principles, and it states that 
+"do not force any client to implement an interface which is irrelevant 
+to them "
+
+
+Dependency Inversion Principle : 
+_________________________________
+
+
+	is a principle in object-oriented designs that states that
+high level modules should not depend on low-level modules. Both should
+depend on abstractions. 
+
+Means, simple way we have to say is classes should rely on interfaces or
+abstract classes rather than concrete implementation.
+
+
+Glimse about Solid 
+___________________
+
+1) Single Responsibility Principle (SRP) : A class should have only one responsibility
+
+2) Open/Closed Principle (OCP) : Open for Extension but closed for modification, means any new requirement to be defined in new class as don't disturb old class already implemented code.
+
+3) Liskov Substitution Principe (LSP) : Objects of a superclass should be replaceable with objects of derived class without affecting the correctness of program
+
+4) Interface Segregation Principle (ISP) : No Client should be forced to depend on methods which is not relevant to them. Means don't add multiple methods to interface and force to implement in corresponding class. instead separate them into multiple interfaces
+
+5) Dependency Inversion Principle (DIP) : High-level modules should not depend on low level modules. As please add interface or abstract class and make them reuse.
