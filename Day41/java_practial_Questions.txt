@@ -1,0 +1,74 @@
+1. Write a function named "eliminateDuplicates" that takes an array of integers in random order
+and eliminates all the duplicate integers in the array. The function should take as argument an array of
+integers. The function should return a value indicating how many unique values were found in the array.
+Here is an example. Suppose the array passed to the function is as shown below, of size 11.
+  0    1    2    3    4    5    6    7    8    9    10
+58 | 26 | 91 | 26 | 70 | 70 | 91 | 58 | 58 | 58 | 66  
+Then the function should alter the array so that it looks like this:
+  0    1    2    3    4    5    6    7    8    9    10
+  58 | 26 | 91 | 70 | 66 | ?? | ?? | ?? | ?? | ?? | ??  
+and it should return the value 5. The question marks in the cells after the 5th cell indicate that it does not
+matter what numbers are in those cells when the function returns.
+
+2. Write a function called “isOrdered” that takes one parameter representing an array of float values
+and returns true if the values of the array are in ascending order, and false otherwise. For example, if the
+array contains the values
+3  4  12  18  19  20  20  24  27
+then the function should return true. Note that duplicate values are allowed.
+However, if the array contains the values
+42  13  27  84  2  12  42  95
+the function should return false.
+
+3. Write an entire Java program that reads a positive integer entered by an interactive user and then prints
+out all the positive divisors of that integer in a column and in decreasing order. The program should allow
+the user to repeat this process as many times as the user likes. Initially, the program should inform the
+user about how the program will behave. Then the program should prompt the user for each integer that
+the user wishes to enter.
+The program may be terminated in any of two ways. One way is to have the program halt if the
+user enters an integer that is negative or zero. In this case the user should be reminded with each prompt
+that the program can be terminated in that way. Alternatively, after an integer has been entered and the
+divisors have been printed, the program can ask the user whether he/she wishes to enter another integer.
+In this case, when the user accidentally enters a zero or negative integer to have its divisors calculated, the
+program should inform the user that the input is unacceptable and should allow the user to try again (and
+again!).
+Here is an illustration of how the program and the interactive user might interact. The user's
+responses to the program are shown in bold italics.
+
+3) This program is designed to exhibit the positive divisors of
+positive integers supplied by you.  The program will repeatedly
+prompt you to enter a positive integer.  Each time you enter a
+positive integer, the program will print all the divisors of your
+integer in a column and in decreasing order.
+Please enter a positive integer: 36
+36
+18
+12
+9
+6
+4
+3
+2
+
+4)  Write a Java program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print "Repairing a car".
+
+5) Write a Java program that creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.
+
+
+6. Write a Java program to create a method that takes an integer as a parameter and throws an exception if the number is odd.
+
+7. Write a Java program to create a method that reads a file and throws an exception if the file is not found.
+
+
+
+8. Write a Java program that reads a list of integers from the user and throws an exception if any numbers are duplicates.
+
+
+9. Write a Java program to create a method that takes a string as input and throws an exception if the string does not contain vowels.
+
+10. Write a Java program to create a generic method that takes a list of any type and returns it as a new list with the elements in reverse order.
+
+11. Write a Java program to create a generic method that takes two lists of the same type and merges them into a single list. This method alternates the elements of each list.
+
+12. Write a Java program to create a generic method that takes a list of any type and a predicate. It returns an array list containing only elements that satisfy the predicate.
+
+13. Write a Java program to create a generic method that takes a map of any type and prints each key-value pair.
