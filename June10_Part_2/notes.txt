@@ -1,0 +1,115 @@
+Web Application : These are the applications, that which are to be called from various places rather than where they are created. 
+
+If you want to make any distributed or robust applications, then we need the help of web applications. 
+
+Web applications can be accessed by deploying them in either web server or application server. 
+
+For pref. we can use Apache TomoCat web server to deploy them. 
+
+You can create web applications in 2 ways 
+
+(I) Scripting Languages : Scripting Languages are languages, that which are interpreted, during runtime they takes lot of time to execute. 
+
+(ii) Programming Languages : These are the languages that which are compiled first, during runtime they takes very less time to execute. 
+
+
+In web applications, we need to implement 
+
+(I) Client-Side : Enables you to access the application from the Client-System, no network traffic and execution will be faster. 
+
+(ii) Server-Side : Enables you to acces the application from server, network traffic is high and a bit slower. 
+
+--> Any intranet based application w.r.t. No Security, please opt for client-side scripting
+
+--> Any internet based application w.r.t. Min. Security, please opt for both client-side/server-side scripting 
+
+--> Any internet based application w.r.t. High Security, please opt for server-side scripting 
+
+JSP (Java Server Pages) 
+
+  In java, we can create any web pages by using JSP. 
+
+But Browser never understands Java Code, JSP allows you to write the combination of both HTML and Java code embedded and improves the performance. 
+
+Life Cycle 
+
+jsp_init() : This method will be called only once in entire life cycle of JSP application, here we need to write the code for global initializations. 
+
+jsp_service() : Whenver you send any request, service() will be called, inside service we have 2 methods as
+
+    doGet()  -> HTTP Get Method which used to get any resources from Server. 
+   
+    doPost() -> Any data to be posted into server or authentication. 
+
+jsp_destroy() : Cleanup process. 
+
+How the way web application will be executed : 
+_______________________________________________
+
+1) A web application send a request to the page by using URL to the webserver.
+
+Example : if I want to run hello.jsp page for DemoWeb application 
+
+http://localhost:8080/DemoWeb/hello.jsp
+
+2) A webserver receives the request and checks the file from disk or memory. 
+
+3) If the page available, then it would be sent for script engine for processing. 
+
+*** Script engine is one of the component in web server, which is responsible to handle the server-side script ***
+
+4) The script engine reads the file from top to bottom and checks if any server-side script it encounters. 
+
+5) The Server-side script will be converted into client-side script. 
+
+Example : 
+
+<asp:textBox id="t1" runat="server" /> 
+
+This code will be convered as 
+
+<input type="text" id="t1" /> 
+
+6) The processed file will be generated as HTML document, that would be 
+send to the client.
+
+7) The client browswer will interpret the page. 
+
+In Jsp, we can write java code and html combination. 
+
+Java code contains 
+
+-> Declarations  <%!  %> 
+
+-> Imports : <%@ page import="java.util.List" %> 
+
+-> Expressions : If you want to display any values <%= name %>
+
+-> Source Code : YOu can write source code using <%   %> 
+
+Intrinsic Object : 
+__________________
+
+-> request
+
+-> response
+
+-> page
+
+-> out
+
+-> application
+
+-> session 
+
+
+<jsp:forward /> Used to redirect to the target page
+
+<jsp:forward page="targetpage.jsp" />
+
+
+
+
+
+
+
