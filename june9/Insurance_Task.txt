@@ -1,0 +1,48 @@
+We start in 15 mins as everyone to join
+
+Thank You
+
+9.45 we start
+
+__________________________________________________________________________________________
+
+Create Table InsureanceCompany
+(
+   companyId int auto_increment primary key,
+   companyName varchar(30),
+   city varchar(30),
+   email varchar(30),
+   mobileNo varchar(20),
+   rating varchar2(10) 
+);
+
+Create Table InsurancePlan
+(
+    planId INT auto_increment primary key,
+    companyId INT REFERENCES InsuranceCompany(companyId),
+    planName varchar(30),
+    startPremium numeric(9,2),
+    Description varchar(30),
+    maxAge INT,
+    minAge INT,
+    waingPeriod numeric(9,2),
+    Ped varchar(30),
+    status varchar(30) default 'ACTIVE' 
+);
+
+create table InsurancePlanDetails
+(
+     planDetailId INT AUTO_INCREMENT PRIMARY KEY,
+     planId INT REFERENCES InsurancePlan(PlanId),
+     premiumAmount numeric(9,2),
+     coverageAmount numeric(9,2),
+     Description varchar(30),
+     status varchar(30) default 'ACTIVE'
+);
+
+--> addCompany, showCompany, searchCompany,
+
+--> AddInsurancePlan,ShowInsurancePlanByCompanyId, searchInsurancePlan(CompanyId,
+planId)
+
+--> ShowInsurancePlanDetailsByPlanId, AddInsurancePlanDetails
