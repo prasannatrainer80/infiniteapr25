@@ -1,0 +1,556 @@
+MCQ on SOLID Principles Practice Test
+Q#1. What does the Single Responsibility Principle (SRP) advocate in software design?
+
+A) A class should only have one reason to change.
+B) A class should be open for extension but closed for modification.
+C) Objects in a program should be replaceable with instances of their subtypes without altering the correctness of the program.
+D) A class should depend on abstractions rather than concrete implementations.
+
+Answer: A
+Explanation:
+
+A is correct because SRP states that a class should have only one responsibility or reason to change.
+B is incorrect, as this describes the Open-Closed Principle (OCP).
+C is incorrect as this refers to the Liskov Substitution Principle (LSP).
+D is incorrect because this explains the Dependency Inversion Principle (DIP).
+Q#2. You are designing a system for processing online orders. The OrderProcessor class is responsible for handling order logic, including order validation, payment processing, and generating order reports. The code has become difficult to maintain. Which SOLID principle is most likely violated in this situation, and how can it be resolved?
+
+A) Open-Closed Principle (OCP); by allowing extensions to handle new responsibilities.
+B) Single Responsibility Principle (SRP); by splitting responsibilities into separate classes like OrderValidator, PaymentProcessor, and OrderReporter.
+C) Dependency Inversion Principle (DIP); by depending on abstractions for each responsibility.
+D) Liskov Substitution Principle (LSP); by ensuring that derived classes can replace the base class without changing the system’s behavior.
+
+Answer: B
+Explanation:
+
+B is correct because the OrderProcessor class violates the Single Responsibility Principle. It should be broken down into multiple classes, each handling a specific responsibility (e.g., validation, payment, and reporting).
+A is incorrect as OCP deals with extending functionality without modifying existing code.
+C is incorrect because DIP focuses on abstraction rather than breaking down responsibilities.
+D is incorrect as LSP deals with substitutability of objects.
+Q#3. In a Java application for handling employee records, the Employee class is responsible for both maintaining employee data and calculating salaries. The company frequently changes salary calculation logic, leading to frequent modifications in the Employee class. How should this situation be addressed to comply with SRP?
+
+A) Merge the salary calculation logic with employee data to reduce class complexity.
+B) Split the salary calculation into its own class, such as SalaryCalculator, to handle changes in salary calculation separately from employee data.
+C) Remove salary calculation and move it into a higher-level class that handles all financial operations.
+D) Combine the salary calculation with other employee-related operations to consolidate responsibilities.
+
+Answer: B
+Explanation:
+
+B is correct as it follows SRP by creating a dedicated class (SalaryCalculator) to handle salary-related logic, separating it from employee data management.
+A is incorrect because merging the logic increases the class’s responsibility.
+C is incorrect because moving it to a higher-level class doesn’t resolve the SRP violation.
+D is incorrect since consolidating responsibilities goes against SRP.
+Q#4.  Consider the following Java code:
+
+public class Invoice {
+   
+   public void createInvoice() {
+     // logic to create invoice
+   }
+
+   public void printInvoice() {
+     // logic to print invoice
+   }
+
+   public void emailInvoice() {
+     // logic to email invoice
+   }
+}
+Which principle is being violated here, and how would you refactor the code?
+
+A) Single Responsibility Principle (SRP); split printInvoice( ) and emailInvoice( ) into separate classes.
+B) Liskov Substitution Principle (LSP); ensure subclasses can extend the behavior of Invoice.
+C) Open-Closed Principle (OCP); add new functionality to modify the behavior of createInvoice( ).
+D) Interface Segregation Principle (ISP); divide the methods into multiple interfaces.
+
+Answer: A
+Explanation:
+
+A is correct because the Invoice class has more than one responsibility. To follow SRP, printInvoice( ) and emailInvoice( ) should be in separate classes, like InvoicePrinter and InvoiceEmailer.
+B is incorrect because LSP is not the issue here.
+C is incorrect because no modification or extension is required.
+D is incorrect because it’s about method segregation into interfaces, not classes
+Q#5. Examine the following code:
+
+public class Report {
+   public void generateReport() {
+      // generate report logic
+   }
+
+   public void exportToPDF() {
+      // export report to PDF logic
+   }
+
+   public void exportToExcel() {
+      // export report to Excel logic
+   }
+}
+Which SOLID principles are being violated in this code? (Choose all that apply)
+
+A) Single Responsibility Principle (SRP)
+B) Open-Closed Principle (OCP)
+C) Interface Segregation Principle (ISP)
+D) Dependency Inversion Principle (DIP)
+
+Answer: A, B
+Explanation:
+
+A is correct because the Report class is responsible for both generating reports and exporting them, which violates SRP.
+B is correct as any new export formats would require modifying the class, violating OCP. Using an abstraction would solve this.
+C is incorrect because the focus is on class responsibilities, not interfaces.
+D is incorrect since there’s no issue of dependency inversion in the provided code.
+Q#6. What does the Open-Closed Principle (OCP) suggest in software design?
+
+A) A class should have only one reason to change.
+B) A class should be open for extension but closed for modification.
+C) A class should depend on abstractions rather than concrete implementations.
+D) A class should not depend on any external libraries.
+
+Answer: B
+Explanation:
+
+B is correct because OCP advocates that a class should be extendable for new functionality without modifying the existing code.
+A is incorrect, as this refers to the Single Responsibility Principle (SRP).
+C is incorrect because it refers to the Dependency Inversion Principle (DIP).
+D is incorrect because OCP does not concern external libraries.
+Q#7. A payment system allows different types of payment methods (credit card, PayPal, etc.). The PaymentProcessor class handles all the payment logic. Each time a new payment method is introduced, the class must be modified to add a new payment type.
+
+Which principle is being violated here, and how can you refactor the code?
+
+
+A) Open-Closed Principle (OCP); by creating a new payment method class for each payment type and using an interface or abstract class for the payment processor.
+B) Single Responsibility Principle (SRP); by separating payment methods into different classes.
+C) Liskov Substitution Principle (LSP); by ensuring that each payment method can substitute another without changing the program behavior.
+D) Dependency Inversion Principle (DIP); by depending on high-level abstractions instead of low-level modules.
+
+Answer: A
+Explanation:
+
+A is correct because the current approach violates OCP. The PaymentProcessor class should use an abstraction (like an interface or abstract class) that allows new payment methods to be added via extension, without modifying the existing code.
+B is incorrect because while SRP might apply in some cases, the issue here primarily concerns extensibility.
+C is incorrect because the problem is not about substitutability of types.
+D is incorrect since DIP focuses on dependencies, not extensibility.
+Q#8. In a reporting application, the Report class generates reports in different formats (PDF, Excel, HTML). Whenever a new format is added, you need to modify the Report class to include the new logic for report generation.
+
+How can this design be improved to adhere to the Open-Closed Principle?
+
+
+A) Move the report generation logic into a separate class and extend it for each format.
+B) Create a factory pattern that generates reports dynamically based on the format type.
+C) Use inheritance to add new report formats by creating subclasses for each format.
+D) Use an interface for generating reports, with different implementations for each format.
+
+Answer: D
+Explanation:
+
+D is correct because using an interface allows new report formats to be added without modifying the existing Report class.
+A is incorrect because moving the logic doesn’t inherently address extensibility without modification.
+B is incorrect as a factory pattern is more related to object creation rather than adhering to OCP.
+C is incorrect because while inheritance could be used, the interface approach better aligns with OCP’s goals.
+Q#9. Consider the following Java code:
+
+public class Shape {
+   public void drawCircle() {
+    // drawing circle logic
+   }
+
+   public void drawSquare() {
+    // drawing square logic
+   }
+}
+You want to add more shapes (e.g., triangles, rectangles) without modifying the existing Shape class. Which design change would adhere to the Open-Closed Principle?
+
+
+A) Add more methods like drawTriangle( ) and drawRectangle( ) to the Shape class.
+B) Use an abstract Shape class and create subclasses like Circle, Square, Triangle for each shape, overriding a draw( ) method.
+C) Combine all drawing logic into one method called drawShape( ).
+D) Use a switch statement inside Shape to handle different shape types dynamically.
+
+Answer: B
+Explanation:
+
+B is correct because this adheres to OCP by allowing new shapes to be added through extension (by creating new subclasses) without modifying the Shape class.
+A is incorrect because adding more methods to the Shape class violates OCP by modifying the existing class for every new shape.
+C is incorrect because consolidating logic into one method does not resolve the OCP violation.
+D is incorrect as using a switch statement would still require modifying the class when new shapes are added.
+Q#10. Consider a simple implementation of a discount system:
+
+public class Discount {
+   public double applyDiscount(String discountType, double amount) {
+      if(discountType.equals("Student")) {
+        return amount * 0.90;
+      } else if(discountType.equals("SeniorCitizen")) {
+        return amount * 0.85;
+      } else if(discountType.equals("Employee")) {
+        return amount * 0.80;
+      }
+     return amount;
+   }
+}
+Which principles are violated in this code?
+
+A) Single Responsibility Principle (SRP)
+B) Open-Closed Principle (OCP)
+C) Liskov Substitution Principle (LSP)
+D) Dependency Inversion Principle (DIP)
+
+Answer: A, B
+Explanation:
+
+A is correct because the Discount class is handling multiple responsibilities (determining discount type and applying the discount).
+B is correct because the class violates OCP. Each time a new discount type is added, the class must be modified. A better solution would involve creating separate classes for each discount type, perhaps implementing a DiscountStrategy interface.
+C is incorrect because there’s no issue of substitutability of objects.
+D is incorrect since the class doesn’t deal with dependencies that require inversion.
+Q#11. Which of the following best describes the Liskov Substitution Principle (LSP)?
+
+A) A subclass should only add new functionality, not modify existing behavior.
+B) A subclass should be able to replace its parent class without affecting the program’s correctness.
+C) A class should only have one reason to change.
+D) A class should depend on abstractions rather than concrete implementations.
+
+Answer: B
+Explanation:
+
+B is correct because LSP states that objects of a subclass should behave as expected when substituted for objects of their superclass, ensuring the program remains correct.
+A is incorrect as it more closely aligns with OCP, which focuses on extending functionality without modification.
+C is incorrect because this relates to the Single Responsibility Principle (SRP).
+D is incorrect because this relates to the Dependency Inversion Principle (DIP).
+Q#12. You have a class Bird with a method fly(). You then create a subclass Penguin, but penguins cannot fly. What principle is violated here?
+
+A) Single Responsibility Principle (SRP)
+B) Open-Closed Principle (OCP)
+C) Liskov Substitution Principle (LSP)
+D) Interface Segregation Principle (ISP)
+
+Answer: C
+Explanation:
+
+C is correct because Penguin violates LSP. If Penguin is substituted for Bird, the fly() method would not work as expected, thus breaking the LSP.
+A is incorrect because this issue isn’t about assigning multiple responsibilities to the class.
+B is incorrect since this is not related to extending classes but ensuring proper substitution.
+D is incorrect because ISP focuses on using smaller, client-specific interfaces.
+Q#13. Consider the following scenario:
+
+You have a base class Vehicle with a method setSpeed(int speed). Subclasses like Car and Bicycle override this method to set the speed appropriately. However, you introduce a new subclass Hovercraft, which cannot move in the same way as a car or bicycle and thus has a different speed behavior.
+
+What principles are potentially violated in this scenario?
+
+
+A) Open-Closed Principle (OCP)
+B) Liskov Substitution Principle (LSP)
+C) Interface Segregation Principle (ISP)
+D) Single Responsibility Principle (SRP)
+
+Answer: B, C
+Explanation:
+
+B is correct because Hovercraft is violating LSP. If Hovercraft cannot behave like a regular Vehicle in terms of speed, it cannot replace the Vehicle class without affecting the behavior of the program.
+C is correct because Hovercraft may be better served by its own specific interface that isolates the different behavior related to its movement, indicating a possible ISP violation.
+A is incorrect because the issue here is not about extending the class but substituting subclasses.
+D is incorrect because SRP doesn’t directly apply to this situation.
+Q#14. Consider the following code:
+
+public class Rectangle {
+   private int width;
+   private int height;
+
+   public void setWidth(int width) {
+      this.width = width;
+   }
+
+   public void setHeight(int height) {
+      this.height = height;
+   }
+
+   public int getArea() {
+      return width * height;
+   }
+}
+
+public class Square extends Rectangle {
+    @Override
+    public void setWidth(int width) {
+       super.setWidth(width);
+       super.setHeight(width); // Force height to match width
+    }
+
+    @Override
+    public void setHeight(int height) {
+       super.setWidth(height); // Force width to match height
+       super.setHeight(height);
+    }
+}
+What principle is violated in this code?
+
+A) Single Responsibility Principle (SRP)
+B) Open-Closed Principle (OCP)
+C) Liskov Substitution Principle (LSP)
+D) Dependency Inversion Principle (DIP)
+
+Answer: C
+Explanation:
+
+C is correct because the Square class is violating LSP. Although Square is a Rectangle, setting the width and height individually results in unexpected behavior when substituted for Rectangle, since the area calculation becomes inconsistent.
+A is incorrect because this issue is about substitution, not multiple responsibilities.
+B is incorrect since extending classes is not the issue here.
+D is incorrect as this is not related to dependencies between classes.
+Q#15. Consider the following Java code:
+
+public class Duck {
+   public void swim() {
+      System.out.println("Swimming");
+   }
+   public void quack() {
+      System.out.println("Quacking");
+   }
+}
+
+public class WoodenDuck extends Duck {
+   @Override
+   public void quack() {
+      throw new UnsupportedOperationException("Wooden ducks cannot quack");
+   }
+}
+Which of the following principles are violated in this code?
+
+
+A) Open-Closed Principle (OCP)
+B) Single Responsibility Principle (SRP)
+C) Liskov Substitution Principle (LSP)
+D) Interface Segregation Principle (ISP)
+
+Answer: C
+Explanation:
+
+C is correct because the WoodenDuck class violates LSP. If WoodenDuck is substituted for Duck, calling quack( ) would result in an exception, which is unexpected behavior.
+A is incorrect as this is not about modifying the existing class for extensions.
+B is incorrect because this is not about multiple responsibilities.
+D is incorrect because there are no interface-related violations here.
+Q#16. Which of the following best describes the Interface Segregation Principle (ISP)?
+
+A) Clients should be forced to depend on interfaces with more functionality than they need.
+B) Clients should depend only on the interfaces they actually use.
+C) Interfaces should be implemented by as many classes as possible to maximize reusability.
+D) A class should depend on abstractions rather than concrete implementations.
+
+Answer: B
+Explanation:
+
+B is correct because ISP states that clients should depend only on interfaces that are relevant to their needs and not be forced to implement methods they do not require.
+A is incorrect because it contradicts the ISP by advocating for large, general-purpose interfaces.
+C is incorrect because this isn’t about maximizing reusability but about specificity.
+D is incorrect as this describes the Dependency Inversion Principle (DIP), not ISP.
+Q#17. You have a Printer interface with methods printDocument( ), scanDocument( ), and faxDocument( ). A basic printer only supports printing and scanning, while an advanced printer supports all three functions. What principle is violated in the case of the basic printer?
+
+A) Single Responsibility Principle (SRP)
+B) Liskov Substitution Principle (LSP)
+C) Interface Segregation Principle (ISP)
+D) Dependency Inversion Principle (DIP)
+
+Answer: C
+Explanation:
+
+C is correct because the basic printer should not be forced to implement faxDocument( ) if it doesn’t support faxing, violating ISP. It’s better to create smaller, specific interfaces (e.g., Print and Scan interfaces).
+A is incorrect because this issue isn’t about responsibilities.
+B is incorrect because this isn’t about substituting objects of subclasses.
+D is incorrect because the issue isn’t related to abstraction layers or dependencies.
+Q#18. Consider the following scenario:
+
+You have a Shape interface with methods draw( ), resize( ), and fillColor( ). The Triangle class implements Shape, but does not support resizing or filling color.
+
+Which principles are violated?
+
+A) Open-Closed Principle (OCP)
+B) Interface Segregation Principle (ISP)
+C) Single Responsibility Principle (SRP)
+D) Liskov Substitution Principle (LSP)
+
+Answer: B
+Explanation:
+
+B is correct because Triangle is forced to implement methods it doesn’t use, violating ISP. The solution would be to break the Shape interface into smaller interfaces like Drawable and Resizable.
+A is incorrect because this isn’t about extending functionality.
+C is incorrect because the responsibility is not split across different concerns here.
+D is incorrect because this isn’t about substitutability.
+Q#19. Consider the following interface and class:
+
+public interface Vehicle {
+    void start();
+    void stop();
+    void refuel();
+}
+
+public class ElectricCar implements Vehicle {
+   
+   @Override
+   public void start() {
+      System.out.println("Starting electric car");
+   }
+
+   @Override
+   public void stop() {
+      System.out.println("Stopping electric car");
+   }
+
+   @Override
+   public void refuel() {
+      throw new UnsupportedOperationException("Electric car does not refuel");
+   }
+}
+What principle is violated here?
+
+A) Single Responsibility Principle (SRP)
+B) Interface Segregation Principle (ISP)
+C) Liskov Substitution Principle (LSP)
+D) Dependency Inversion Principle (DIP)
+
+Answer: B
+Explanation:
+
+B is correct because the ElectricCar class is forced to implement the refuel() method even though it doesn’t make sense for electric vehicles. A better approach would be to create a FuelVehicle interface separate from the Vehicle interface.
+A is incorrect because this issue doesn’t pertain to responsibilities.
+C is incorrect because this isn’t about substitutability.
+D is incorrect because there’s no issue with abstraction or dependencies.
+Q#20. Consider the following code:
+
+public interface Animal {
+   void eat();
+   void fly();
+}
+
+public class Dog implements Animal {
+    @Override
+    public void eat() {
+       System.out.println("Dog is eating");
+    }
+
+    @Override
+    public void fly() {
+       throw new UnsupportedOperationException("Dogs cannot fly");
+    }
+}
+Which of the following principles are violated?
+
+A) Single Responsibility Principle (SRP)
+B) Open-Closed Principle (OCP)
+C) Interface Segregation Principle (ISP)
+D) Liskov Substitution Principle (LSP)
+
+Answer: C, D
+Explanation:
+
+C is correct because Dog shouldn’t have to implement a fly( ) method. A better solution would be to separate the Animal interface into more specific interfaces (e.g., Eatable and Flyable), which follows ISP.
+D is correct because if a Dog object is substituted for an Animal, the fly( ) method throws an exception, breaking LSP.
+A is incorrect as the issue here is not about multiple responsibilities.
+B is incorrect because extending the interface isn’t the focus here.
+Q#21. Which of the following best describes the Dependency Inversion Principle (DIP)?
+
+A) High-level modules should depend on low-level modules.
+B) High-level and low-level modules should depend on abstractions, not on each other.
+C) Low-level modules should only depend on concrete implementations.
+D) Modules should avoid depending on interfaces or abstractions.
+
+Answer: B
+Explanation:
+
+B is correct because DIP states that high-level and low-level modules should both depend on abstractions, ensuring decoupling.
+A is incorrect because it contradicts DIP, which discourages direct dependencies between high-level and low-level modules.
+C is incorrect as low-level modules should depend on abstractions, not concrete implementations.
+D is incorrect because DIP advocates for the use of abstractions to decouple modules.
+Q#22. You are designing a payment system. The PaymentProcessor class depends directly on the PaypalPayment and CreditCardPayment classes to process payments. What is the main violation in this design?
+
+A) Single Responsibility Principle (SRP)
+B) Open-Closed Principle (OCP)
+C) Dependency Inversion Principle (DIP)
+D) Interface Segregation Principle (ISP)
+
+Answer: C
+Explanation:
+
+C is correct because PaymentProcessor depends on specific low-level payment classes (PaypalPayment, CreditCardPayment), violating DIP. It should depend on abstractions (e.g., PaymentMethod interface).
+A is incorrect because this isn’t a matter of handling too many responsibilities.
+B is incorrect because this design doesn’t violate OCP.
+D is incorrect as this isn’t about forcing the class to implement unused methods.
+Q#23. You are building a notification system where EmailNotification and SMSNotification are concrete classes directly used by the NotificationService class. To follow the Dependency Inversion Principle, what should be done?
+
+A) Introduce an abstract Notification interface and make both EmailNotification and SMSNotification implement it.
+B) Make NotificationService depend only on the EmailNotification class.
+C) Use a dependency injection framework to inject dependencies.
+D) Let NotificationService directly depend on the specific notification classes.
+
+Answer: A, C
+Explanation:
+
+A is correct because introducing an abstraction (Notification interface) allows NotificationService to depend on an interface rather than concrete implementations.
+C is correct because dependency injection decouples the instantiation of dependencies from the NotificationService.
+B is incorrect because it violates DIP by having NotificationService depend directly on a low-level class (EmailNotification).
+D is incorrect because this continues the violation of DIP by depending on concrete implementations.
+Q#24. Consider the following code:
+
+public class FileLogger {
+   public void log(String message) {
+       System.out.println("Logging to file: " + message);
+   }
+}
+
+public class App {
+   private FileLogger logger = new FileLogger();
+
+   public void process() {
+      logger.log("Process started");
+   }
+}
+Which principle is violated here?
+
+A) Single Responsibility Principle (SRP)
+B) Liskov Substitution Principle (LSP)
+C) Dependency Inversion Principle (DIP)
+D) Open-Closed Principle (OCP)
+
+Answer: C
+Explanation:
+
+C is correct because the App class depends directly on the FileLogger concrete implementation, violating DIP. The App class should depend on an abstraction, like a Logger interface, allowing for flexibility.
+A is incorrect because this isn’t an issue related to the number of responsibilities.
+B is incorrect because this isn’t related to substitutability.
+D is incorrect because the focus isn’t on extending functionality.
+Q#25. Consider the following code:
+
+public interface PaymentMethod {
+    void processPayment();
+}
+
+public class PaypalPayment implements PaymentMethod {
+   @Override
+   public void processPayment() {
+      System.out.println("Processing PayPal payment");
+   }
+}
+
+public class OrderService {
+   
+   private PaymentMethod paymentMethod;
+
+   public OrderService(PaymentMethod paymentMethod) {
+      this.paymentMethod = paymentMethod;
+   }
+
+   public void makePayment() {
+      paymentMethod.processPayment();
+   }
+}
+Which principle is being followed here?
+
+A) Single Responsibility Principle (SRP)
+B) Liskov Substitution Principle (LSP)
+C) Interface Segregation Principle (ISP)
+D) Dependency Inversion Principle (DIP)
+
+Answer: D
+Explanation:
+
+D is correct because the OrderService class depends on the PaymentMethod interface, which is an abstraction, adhering to DIP. This ensures that OrderService is decoupled from specific payment implementations.
+A is incorrect as this isn’t related to SRP.
+B is incorrect as substitutability isn’t the focus here.
+C is incorrect as the focus is on dependency inversion, not interface segregation.

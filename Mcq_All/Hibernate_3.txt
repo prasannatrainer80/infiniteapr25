@@ -1,0 +1,357 @@
+1. What is Hibernate in Java?
+a) A web framework
+b) A database
+c) An ORM (Object-Relational Mapping) framework
+d) A logging framework
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+c) An ORM (Object-Relational Mapping) framework
+Explanation:
+Hibernate is an ORM (Object-Relational Mapping) framework that allows developers to map Java objects to database tables and vice versa.
+2. Which file is used to configure Hibernate settings?
+a) hibernate-config.xml
+b) hibernate.cfg.xml
+c) hibernate-settings.xml
+d) hibernate-setup.xml
+
+
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+b) hibernate.cfg.xml
+Explanation:
+The hibernate.cfg.xml file is used to configure Hibernate settings, such as database connection properties and Hibernate-specific settings.
+3. Which Hibernate interface is used to create a session?
+a) SessionFactory
+b) SessionBuilder
+c) SessionFactoryBuilder
+d) SessionManager
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) SessionFactory
+Explanation:
+The SessionFactory interface is used to create a Session in Hibernate, which represents a single unit of work with the database.
+4. What is the purpose of the Session interface in Hibernate?
+a) To manage transactions
+b) To manage the database connection
+c) To perform CRUD operations on persistent objects
+d) To manage the cache
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+c) To perform CRUD operations on persistent objects
+Explanation:
+The Session interface in Hibernate is used to perform CRUD (Create, Read, Update, Delete) operations on persistent objects.
+5. Which of the following is a core interface of Hibernate?
+a) Configuration
+b) Transaction
+c) Query
+d) All of the above
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+d) All of the above
+Explanation:
+All of the mentioned interfaces (Configuration, Transaction, Query) are core interfaces of Hibernate.
+6. Which method is used to save an object in Hibernate?
+a) saveObject()
+b) persist()
+c) save()
+d) store()
+
+
+
+Click to View Answer and Explanation
+Answer:
+c) save()
+Explanation:
+The save() method is used to save an object in Hibernate, persisting it to the database.
+7. Which method in Hibernate is used to update an existing record?
+a) update()
+b) modify()
+c) saveOrUpdate()
+d) persist()
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) update()
+Explanation:
+The update() method in Hibernate is used to update an existing record in the database.
+8. What does the saveOrUpdate() method do in Hibernate?
+a) It saves a new object if it does not exist, or updates it if it already exists
+b) It only saves a new object
+c) It only updates an existing object
+d) It deletes an object if it exists
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) It saves a new object if it does not exist, or updates it if it already exists
+Explanation:
+The saveOrUpdate() method in Hibernate saves a new object if it does not exist, or updates it if it already exists in the database.
+9. What is HQL in Hibernate?
+a) Hibernate Query Language
+b) Hibernate Quick Language
+c) Hibernate Query Library
+d) Hibernate Query Listener
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) Hibernate Query Language
+Explanation:
+HQL stands for Hibernate Query Language, which is an object-oriented query language used to perform database operations in Hibernate.
+10. Which annotation is used to specify an entity in Hibernate?
+a) @Table
+b) @Entity
+c) @Persistence
+d) @Data
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+b) @Entity
+Explanation:
+The @Entity annotation is used in Hibernate to specify that a class is an entity and should be mapped to a database table.
+11. What is the default fetching strategy in Hibernate for @ManyToOne relationships?
+a) EAGER
+b) LAZY
+c) IMMEDIATE
+d) NONE
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) EAGER
+Explanation:
+The default fetching strategy for @ManyToOne relationships in Hibernate is EAGER, meaning the related entity is loaded immediately along with the owner entity.
+12. Which method is used to delete an object in Hibernate?
+a) remove()
+b) delete()
+c) destroy()
+d) erase()
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+b) delete()
+Explanation:
+The delete() method is used in Hibernate to delete an object from the database.
+13. What is the use of the Configuration class in Hibernate?
+a) To configure Hibernate settings
+b) To create a SessionFactory
+c) To load Hibernate configurations from an XML file
+d) All of the above
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+d) All of the above
+Explanation:
+The Configuration class in Hibernate is used to configure Hibernate settings, create a SessionFactory, and load configurations from an XML file.
+14. Which annotation is used to specify a primary key in Hibernate?
+a) @Primary
+b) @Key
+c) @Id
+d) @PK
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+c) @Id
+Explanation:
+The @Id annotation is used in Hibernate to specify the primary key of an entity.
+15. Which method is used to execute an HQL query in Hibernate?
+a) executeQuery()
+b) query()
+c) createQuery()
+d) execute()
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+c) createQuery()
+Explanation:
+The createQuery() method in Hibernate is used to create and execute an HQL query.
+16. Which Hibernate feature allows automatic table creation and schema updates?
+a) Schema Generation
+b) Auto Schema Update
+c) Schema Tool
+d) Auto DDL
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) Schema Generation
+Explanation:
+Hibernate's Schema Generation feature allows automatic creation of database tables and schema updates based on entity mappings.
+17. What does the @OneToMany annotation signify in Hibernate?
+a) A relationship where one entity is associated with one entity
+b) A relationship where one entity is associated with multiple entities
+c) A relationship where many entities are associated with one entity
+d) A relationship where many entities are associated with many entities
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+b) A relationship where one entity is associated with multiple entities
+Explanation:
+The @OneToMany annotation in Hibernate signifies a relationship where one entity is associated with multiple entities.
+18. What does the @ManyToMany annotation signify in Hibernate?
+a) A relationship where one entity is associated with one entity
+b) A relationship where one entity is associated with multiple entities
+c) A relationship where many entities are associated with one entity
+d) A relationship where many entities are associated with many entities
+Click to View Answer and Explanation
+
+
+
+
+
+Answer:
+d) A relationship where many entities are associated with many entities
+Explanation:
+The @ManyToMany annotation in Hibernate signifies a relationship where many entities are associated with many entities.
+19. Which feature of Hibernate allows caching of data for better performance?
+a) DataBuffer
+b) QueryCache
+c) HibernateCache
+d) Second-level cache
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+d) Second-level cache
+Explanation:
+Hibernate's second-level cache allows caching of data across sessions for better performance.
+20. Which method is used to commit a transaction in Hibernate?
+a) commitTransaction()
+b) commit()
+c) complete()
+d) save()
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+b) commit()
+Explanation:
+The commit() method is used to commit a transaction in Hibernate, making all changes made during the transaction permanent.
+21. What does the @Embedded annotation do in Hibernate?
+a) It specifies that a field is embedded in the entity
+b) It specifies a relationship between two entities
+c) It specifies a primary key
+d) It specifies a table name
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) It specifies that a field is embedded in the entity
+Explanation:
+The @Embedded annotation in Hibernate specifies that a field is an embedded object, which means its properties are mapped as columns in the table of the owning entity.
+22. What is the purpose of the @Table annotation in Hibernate?
+a) To map a class to a specific database table
+b) To specify the columns of a table
+c) To specify the primary key
+d) To map a class to a specific database column
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) To map a class to a specific database table
+Explanation:
+The @Table annotation in Hibernate is used to map an entity class to a specific database table.
+23. What is the purpose of the @Inheritance annotation in Hibernate?
+a) To specify an inheritance strategy for an entity
+b) To specify a relationship between entities
+c) To specify a primary key strategy
+d) To specify a caching strategy
+
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+a) To specify an inheritance strategy for an entity
+Explanation:
+The @Inheritance annotation in Hibernate is used to specify the inheritance strategy for an entity, such as SINGLE_TABLE, TABLE_PER_CLASS, or JOINED.
+24. What is a native query in Hibernate?
+a) A query written in HQL
+b) A SQL query written in the native SQL language of the database
+c) A query that only retrieves native data types
+d) A query that uses a native database connection
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+b) A SQL query written in the native SQL language of the database
+Explanation:
+A native query in Hibernate is a SQL query written in the native SQL language of the database and executed directly against the database.
+25. Which Hibernate feature allows lazy loading of data?
+a) EAGER loading
+b) IMMEDIATE loading
+c) LAZY loading
+d) DELAYED loading
+
+
+
+
+Click to View Answer and Explanation
+Answer:
+c) LAZY loading

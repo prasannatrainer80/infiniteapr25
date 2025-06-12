@@ -1,0 +1,141 @@
+1. Hibernate ORM stands for ?
+
+A. Class Relational Mapping
+B. Class Object Mapping
+C. Object Relational Mapping
+D. None of the above
+
+
+
+
+
+
+
+
+
+View Answer
+
+Ans : C
+Explanation: Hibernate ORM stands for Object Relational Mapping. This is a mapping tool pattern mainly used for converting data stored in a relational database to an object used in object-oriented programming constructs. This tool also helps greatly in simplifying data retrieval, creation, and manipulation.
+
+
+2. Which of the following are advantages of Hibernate?
+
+A. Clean Readable Code
+B. Hibernate Query Language
+C. Exception Handling
+D. All of the above
+
+View Answer
+
+Ans : D
+Explanation: All of the above are advantages of Hibernate.
+
+
+3. A ____________ is an object that maintains the connection between Java object application and database.
+
+A. cookie
+B. session
+C. cache
+D. persist
+
+View Answer
+
+Ans : B
+Explanation: A session is an object that maintains the connection between Java object application and database. Session also has methods for storing, retrieving, modifying or deleting data from database using methods like persist(), load(), get(), update(), delete(), etc.
+
+
+4. SessionFactory provides an instance of Session.
+
+A. TRUE
+B. FALSE
+C. Can be true or false
+D. Can not say
+
+SessionFactory sf = new AnnotationConfiguration().configure().buildSessionFactory();
+Session session = sf.openSession();
+
+View Answer
+
+Ans : A
+Explanation: True, SessionFactory provides an instance of Session. It is a factory class that gives the Session objects based on the configuration parameters in order to establish the connection to the database.
+
+
+5. _____________ is mainly used for improving the application performance by helping to load the child objects on demand.
+
+A. Load
+B. Configuration
+C. Lazy loading
+D. CGF
+
+View Answer
+
+Ans : C
+Explanation: Lazy loading is mainly used for improving the application performance by helping to load the child objects on demand
+
+
+
+6. Hibernate has _____ cache types
+
+A. 1
+B. 2
+C. 3
+D. 4
+
+View Answer
+
+Ans : B
+Explanation: Hibernate has 2 cache types: First level and second level cache
+
+
+7. A ___________ represents a unit of work with the database and most of the RDBMS supports DML functionality.
+
+A. Query objects
+B. Session
+C. Criteria objects
+D. Transaction
+
+View Answer
+
+Ans : D
+Explanation: A Transaction represents a unit of work with the database and most of the RDBMS supports transaction functionality. Transactions in Hibernate are handled by an underlying transaction manager and transaction (from JDBC or JTA).
+
+
+8. Which session method begin a unit of work and return the associated Transaction object?
+
+A. clear
+B. cancelQuery
+C. Transaction trans = session.beginTransaction()
+D. Transaction
+
+View Answer
+
+Ans : C
+Explanation: Transaction beginTransaction(): Begin a unit of work and return the associated Transaction object.
+
+
+9. What do you think about the statement - "session being a thread-safe object"?
+
+A. Yes
+B. No
+C. Can be yes or no
+D. Can not say
+
+View Answer
+
+Ans : B
+Explanation: No, Session is not a thread-safe object which means that any number of threads can access data from it simultaneously.
+
+
+10. The Hibernate architecture consists of?
+
+A. persistent object
+B. sessionfactory
+C. transaction
+D. All of the above
+
+View Answer
+
+Ans : D
+Explanation: The Hibernate architecture consists of many objects such as a persistent object, session factory, session, query, transaction, etc.
+
