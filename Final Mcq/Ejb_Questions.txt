@@ -1,0 +1,128 @@
+1)   Which services are provided to EJB components by the EJB container?
+
+a. Transaction support
+b. Persistence support
+c. Naming support
+d. All mentioned above
+
+2)   Which case of a session bean obtains the UserTransaction object via the EJBContext using the getUserTransaction() method in EJB transaction management?
+a. Bean-managed transactions
+b. Container-managed transactions
+c. Both A & B
+d. None of the above
+
+3)   EJB QL is a Query Language provided for navigation across a network of enterprise beans and dependent objects defined by means of container managed persistence.
+
+a. True
+b. False
+c. None
+d. Not Justified
+
+4)   A message driven bean is like statefull session bean that encapsulates the business logic and doesn't maintain state.
+a. True
+b. False
+c. None
+d. Error
+
+5)   Abbreviate the term JMS?
+
+a. Java Message Service
+b. Java Monitor Service
+c. Java Message Session
+d. Java Monitor Session
+
+6)   Which session bean maintain their state between client invocations but are not required to maintain their state across server crashes or shutdowns?
+a. Stateful Session Bean
+b. Stateless Session Bean
+c. Singleton Session Bean
+d. None of the above
+
+7)   Which EJB container must provide an implementation of Java Naming and Directory Interface (JNDI) API to provide naming services for EJB clients and components?
+
+a. Transaction support
+b. Persistence support
+c. Naming support
+d. All mentioned above
+
+8)   Which component does the Entity bean represent the persistent data stored in the database?
+- Published on 20 Jul 15
+
+a. Server-side component
+b. Client-side component
+c. server and client side component
+d. None of the above
+
+9) What represents a persistent global data from the database?
+- Published on 16 Jul 15
+
+a. Entity Bean
+b. Session Bean
+c. Both A & B
+d. None of the above
+
+10) Which component does the Entity bean represents the persistent data stored in the database?
+a. Server-side component
+b. Client-side component
+c. server and client side component
+d. None of the above
+
+11)   Which server-side component is required to be deployed on the server?
+
+a. EJB
+b. RMI
+c. Both A & B
+d. None of the above
+
+12)   How many types of session beans are available in EJB?
+
+a. 2
+b. 3
+c. 4
+d. 5
+
+13)   Which type of instances retain no data or conversational state for a specific client?
+
+a. Message-Driven Bean
+b. Session Bean
+c. Entity Bean
+d. None of the above
+
+14)   Which middleware services are provided by EJB?
+
+a. Security
+b. Transaction Management
+c. Both A & B
+d. None of the above
+
+15)   Which session bean does the conversational state between multiple method calls is not maintained by the container?
+
+a. Stateful Session Bean
+b. Stateless Session Bean
+c. Singleton Session Bean
+d. None of the above
+
+16. Which of the following annotation is used to specify or inject a dependency as ejb instance into another ejb?
+A. javax.ejb.Stateless  B. javax.ejb.Stateful
+C. javax.ejb.MessageDrivenBean D. javax.ejb.EJB
+
+17) The EJB specification architecture does NOT define
+A. transactional components B. client side security and encryption C. distributed object components D. server-side components
+
+18) Which of the following is true?
+A. Preserving of any state across method calls does not performed by Stateless session beans
+B. Multiple users can access Stateful session beans at the same time
+C. Both are correct
+D. None
+
+19) Which EJB container must provide an implementation of Java Naming and Directory Interface (JNDI) API to provide naming services for EJB clients and components?
+A. Transaction support
+B. Persistence support
+C. Naming support
+D. All mentioned above
+
+
+20. Which statement about session beans is true?
+A. In both stateless and statefull session classes, the bean provider must write the method public void remove()
+B. The method << remove >> in the component interface can be accessed only by the remote clients
+C. The bean's handle must be provided by the client, in order to ask the EJBHome for removing a session bean
+D. None

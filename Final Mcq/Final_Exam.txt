@@ -1,0 +1,1263 @@
+1) 
+	What is the output for
+public class Main {
+	public static void main(String[] args) {
+	int[] a = new int[]{12,4,6,33,23};
+	for(int i : a) {
+		System.out.println(a);
+	}
+	}
+A) 12, 4, 6, 33, 23  B) Compile Time Error C) Prints Address 5 times
+D) Runtime Error
+__________________________________________________________________________
+2) What is the output for the below code
+public class Hello {
+   public static void main(String[] args) {
+	String str="Hello";
+	System.out.println(str.concat(" World"));
+   }
+}
+
+A) Hello B) Compile Time Error C) Hello World D) Runtime Error
+______________________________________________________________________
+3)	Which statements are true
+	(i) Constructors will have same name as that of class name
+	(ii) Constructors will return values
+	(iii) Constructors can be overloaded
+	(iv) Constructors used to initialize member variables of the class
+
+A) I, II B) I, III, IV C) I D) III, IV
+__________________________________________________________________________
+4)	Which statement is true for Final class 
+i)	Can be inherited
+ii)	Cannot be inherited
+iii)	Cannot create an object
+iv)	Cannot have constructor
+
+A) I B) II C) III D) IV 
+__________________________________________________________________________
+5) What is the output
+public class Main
+{
+   public static void main(String[] args) {
+	int[] a=new int[6];
+	a[10]=66;
+   }
+}
+
+A) Code will run with no errors B) Code throw ArrayIndexOutOfBounds Exceptoin C) Compile Time Error D) No Output Produced
+__________________________________________________________________________
+6) 
+What would be output for the below code
+public class Ex2 {
+int a=18;
+public static void show() {
+System.out.println("Age  " +a);
+    }
+public static void main(String[] args) {
+new Ex2().show();
+    }
+}
+
+A) Age 12 B) Runtime Error C) None D) Compile Time Error
+__________________________________________________________________________
+
+7) public class Ex3 {
+
+public static void main(String[] args) {
+       String month;
+month = "Feb";
+switch(month) {
+case "Feb" : System.out.println("Hi");
+case "Mar" : System.out.println("Hello");
+case "Apr" : System.out.println("Bye");
+case "May" : System.out.println("Test");
+default :
+System.out.println("Default");
+       }
+    }
+}
+
+A) Hi B) Test C) Hi Hello Byte Test Default D) Hi Hello Byte Test 
+__________________________________________________________________________
+8) What would be output for
+class Test {
+void tests() {
+System.out.println("Hi");
+    }
+}
+
+class Fest extends Test {
+static void tests() {
+System.out.println("Bye");
+    }
+}
+public class Ex3 {
+
+public static void main(String[] args) { // line 4
+     Test obj = new Test();
+obj.tests();
+    }
+}
+A) Compile Time Error B) Runtime Error C) Hi D) Bye
+__________________________________________________________________________
+9) What would be output
+public class Ex3 {
+
+public static void main(String[] args) { 
+        String s1="abc";
+        String s2="abc";
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+    }
+}
+A) true false B) true true C) false false D) Compile time error
+__________________________________________________________________________
+10) To access a method in same package and other package derived classes, which modifier(s) we want
+
+A) private B) default C) protected D) ALL
+__________________________________________________________________________
+
+11) What is the output for below code
+public class P17 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new NumberFormatException();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+A) B Z B) B C Z C) A C Z D) B A Z
+
+12) What would be output for below code
+
+public class P17 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new NumberFormatException();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(NumberFormatException e) {
+	   System.out.println("X");
+	} catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+A) B X Z B) B A Z C) B C Z D) Compile Time Error 
+
+13) What would be output for below code
+
+public class E1 {
+
+	static {
+	      try {throw new ArithmeticException("my exception");
+
+	      }
+	      catch(ArithmeticException e) {
+		System.out.println("3");
+	      }
+	      catch(Exception e){
+	        System.out.println("2");
+	      }
+	    }
+	 
+	    public static void main(String[] args){
+	      System.out.println("1");
+	    }
+}
+
+A) 1 2 B) 3 1 C) Compile Time Error D) Runtime Error
+
+14) What would be output for below code
+
+public class E1 {
+	static {
+	      try {throw new ArithmeticException("my exception");
+
+	      }
+	       catch(ArithmeticException e) {
+	         System.out.println("3");
+	       }
+	      catch(Exception e){
+	        System.out.println("2");
+	      }
+	    }
+	 
+	    public static void main(String[] args){
+	      System.out.println("1");
+	    }
+}
+
+A) 1 1 B) 2 2 C) 3 1 D) Runtime Error 
+
+15) What would be output for below code
+
+public class P31 {
+    public static void main(String[] args) {
+        try {
+            int a=5;
+            int b=4;
+            int c=a/b;
+            System.out.println("Hi");
+        } catch(ArithmeticException e) {
+            System.out.println("Divex");
+        } finally {
+            System.out.println("Program End...");
+        }
+    }
+}
+
+A) Compile Time Error B) Hi Program End C) DivEx Program End D) Program End 
+
+16) What would be output for below code
+
+public class P23 {
+    public static void main(String[] args) {
+        int[] a=new int[5];
+        try {
+            a[6]=5/0;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Size Small...");
+        } catch(ArithmeticException e) {
+            System.out.println("Division By Zero Impossible");
+        } catch(Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+
+A) Division by zero impossible B) Array Size Small C) General Exception D) None
+
+17) What would be output for below code
+
+public class P23 {
+    public static void main(String[] args) {
+        int[] a=new int[5];
+        try {
+            a[6]=5/3;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Size Small...");
+        } catch(ArithmeticException e) {
+            System.out.println("Division By Zero Impossible");
+        } catch(Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+
+A) Division by zero Impossible B) General Exception C) None D) Array Size is Small
+
+18) What is the output ofr below code 
+
+public class E1 {
+	public static void main(String[] args) {
+		  try {
+	            int a=5;
+	            int b=4;
+	            int c=a/b;
+	            System.out.println("Hi");
+	        }
+		  catch (Exception e) {
+			  System.out.println("Error");
+		  }
+		  catch(ArithmeticException e) {
+	            System.out.println("Divex");
+	        } finally {
+	            System.out.println("Program End...");
+	        }
+	}
+}
+
+
+A) Hi Program End B) Error C) DivEx D) Compile Time Error 
+
+
+19) Which Package allows you to perform junit 
+
+a) org.jmock.test b) org.junit.test c) org.test d) None
+
+20) Which annotation used as if method to be executed only once in the entire test life cycle before test case
+
+a) @BeforeClass b) @AfterClass c) @Before d) @After 
+
+21) Which annotation used for everytime, the before test case will be executed
+
+a) @BeforeClass b) @AfterClass c) @Before d) @After 
+
+22) Which annotation used for everytime, at the end of test case 
+
+a) @BeforeClass b) @AfterClass c) @Before d) @After 
+
+23) What would be output for this program
+
+        int[] a=new int[]{1,2};
+        int[] b =new int[]{1,2};
+        assertArrayEquals("hello",a,b);
+
+A) Test Case Passes successfully B) Compile Time Error C) Runtime Error D) None
+
+24) What is the output for below code
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import org.junit.After;  
+import org.junit.AfterClass;  
+import org.junit.Before;  
+import org.junit.BeforeClass;
+
+import org.junit.Test;
+
+
+public class DemoTest {
+
+    static Demo obj;
+
+    @BeforeClass 
+    public static void setUp() {
+        obj = new Demo();
+        System.out.println("Global Object Created...");
+    }
+
+    @AfterClass 
+    public static void cleanUp() {
+        obj = null;
+        System.out.println("Object Deallocated...");
+    }
+
+    @Before 
+    public void showInfo() {
+        System.out.println("Test Case Started...");
+    }
+
+    @After 
+    public void clearInfo() {
+        System.out.println("Test Case Ended...");
+    }
+    
+    @Test 
+    public void testSayHello() {
+        // Demo obj = new Demo();
+        assertEquals("Welcome to Junit...", obj.sayHello());
+    }
+
+}
+
+A) Compile time Error B) Global Object Created...Test Case Started...Test Case Ended...
+Object Deallocated... C) Runtime Error D) Global Object Created...
+Object Deallocated... 
+
+25) What is the output for below code
+
+public void before() {
+    System.out.println("before");
+   }
+   @After 
+   public void after() {
+    System.out.println("After");
+  }
+   @Test
+   public void test1() {
+    System.out.println("Test 1");
+   }
+
+   @Test
+   public void test2() {
+    System.out.println("Test2");
+   }
+}
+
+A) Before After Test1 Test 2 B) Test1 After Test2 C) Test1 After Test2 After D) None
+
+26)
+
+public class JunitTest {
+ 
+   @BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+
+   public void before() {
+    System.out.println("Before...");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+}
+
+A) No Output as no valid Test case B) Compile Time Error C) Runtime Error D) Before...After...
+
+
+27)
+
+public class DummyTest {
+   @BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+
+   @Test 
+   public void testMe() {
+       assertEquals("Hi","Hi");
+   }
+   public void before() {
+    System.out.println("Before...");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+}
+
+A) BeforeClass... Before...After...AfterClass... B) BeforeClass...After...AfterClass...
+C) Compile Time Error D) Runtime Error
+
+28) 
+
+@BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+   @Before
+   public void before() {
+    System.out.println("Before...");
+   }
+   @Test
+   public void testSayHello() {
+     assertEquals("Hello","Hello");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+
+A) BeforeClass...Before...After...AfterClass...
+B) BeforeClass...AfterClass...Before...After...
+C) BeforeClass...After...
+D) BeforeClass...After...
+
+29)
+
+public class Junit4Test {
+  @Test 
+  public void test() {
+    Assert.assertTrue(false);
+  }
+  @Test
+  public void test2() {
+    assert false;
+  }
+}
+A) False true B) False False C) Compile Time Error D) Runtime Error
+
+30) 
+
+
+ @Test 
+   public void testMe() {
+       assertEquals("August Batch","Hi","Hi");
+   }
+
+    @Test 
+   public void testFail() {
+       assertEquals("November Batch","Hi","Hello");
+   }
+
+A) Test Case pass B) Test Case Fail and Error Message as "August Batch" 
+C) Runtime Error D) Compile Time Error 
+
+31)
+
+public class DemoTest {
+
+    static Demo obj;
+
+    @BeforeClass 
+    public static void setUp() {
+        obj = new Demo();
+        System.out.println("Global Object Created...");
+    }
+
+    @AfterClass 
+    public static void cleanUp() {
+        obj = null;
+        System.out.println("Object Deallocated...");
+    }
+
+    @Before 
+    public void showInfo() {
+        System.out.println("Test Case Started...");
+    }
+
+    @After 
+    public void clearInfo() {
+        System.out.println("Test Case Ended...");
+    }
+    
+}
+
+A) No Output as no valid @Test case B) Runtime Error C) Compile Time Error D) Test Case Ended...
+
+32)
+
+public class DemoTest {
+
+    static Demo obj;
+
+    public static void setUp() {
+        obj = new Demo();
+        System.out.println("Global Object Created...");
+    }
+
+    @AfterClass 
+    public static void cleanUp() {
+        obj = null;
+        System.out.println("Object Deallocated...");
+    }
+
+    @Before 
+    public void showInfo() {
+        System.out.println("Test Case Started...");
+    }
+
+    public void clearInfo() {
+        System.out.println("Test Case Ended...");
+    }
+    
+    @Test 
+    public void testSayHello() {
+        // Demo obj = new Demo();
+        assertEquals("Welcome to Junit...", obj.sayHello());
+    }
+
+    @Test 
+    public void testSum() {
+        // Demo obj = new Demo();
+        assertEquals(5, obj.sum(2,3));
+    }
+
+    @Test 
+    public void testMax3() {
+        // Demo obj = new Demo();
+        assertEquals(5, obj.max3(2,3,5));
+    }
+}
+
+A) No Output as no valid @Test case B) Runtime Error C) Compile Time Error as Object is NULL D) Test Case Ended...
+
+33) A Thread can be create by
+A) Extending Thread Class B) Implements Runnable C) Both A and B D) None Of Above
+
+34) What would be output for below code
+Public class Test implements Runnable
+{
+	Public static void main(String[] args) {
+		Test t = new Test();
+		t.run();	
+		t.start();
+}
+	Public void run() {
+		System.out.println(“run-test”);
+	} 
+}
+a)	run-test run-test b) run-test c) Compile Time Error D) Runtime Error
+
+35)  What is multithreaded programming?
+a) It’s a process in which two different processes run simultaneously
+b) It’s a process in which two or more parts of same process run simultaneously
+c) It’s a process in which many different process are able to access same information
+d) It’s a process in which a single process can access information from many sources
+
+36) Which method used to invoke the thread
+
+a) run() b) start() c) sleep() d) abort()
+
+37) Which method contains the actual code to be executed once thread starts
+
+a) run() b) start() c) sleep() d) abort()
+
+38)  What is dead thread in java ?
+A A thread that is waiting for I/O operation
+B A thread completed its run method
+C A thread is in sleep
+D None of these
+
+39) Select the valid thread state transition?
+A ready to running
+B ready to waiting
+C waiting to running
+D running to ready
+
+40) Thread priority in Java is?
+A Integer B Float C double D long
+
+41) You can create thread safe methods by using
+
+A) lock B) synchronized C) mutex d) none
+
+42) Which of the below class contains synchronized methods
+
+A) ArrayList B) HashMap C) HashTable D) LinkedList
+
+43) Which methods cannot be tested by the JUnit test class?
+a) protected methods
+b) methods with void return type
+c) private methods
+d) public methods
+
+44) Write the order for Sql Queries based on priority
+
+A) Group By...Having...Where...Order By
+B) Order By...Group By...Having...Where...
+C) Where...Group By...Having...Order By
+D) None
+
+45) Identity valid query that which returns records whose name starts with S
+
+A) select * from Employ where name='s?'
+B) select * from Employ where name='s%'
+C) select * from Employ where name in('S')
+D) select * from Employ where name like 'S%'
+
+46) Identify the correct syntax for group by below
+
+A) select dept, sum(basic) from emp group by dept
+B) select dept, sum(basic) from emp group by dept where job is not null
+C) select dept, sum(basic) from Emp where sum(sal) > 15000
+D) select dept, sum(basic) from Emp group by dept having dept is not null
+
+47) Identify the output for below query
+
+ select round(9888.8788,-2)
+
+A) 97 B) 99 C) 988 D) None 
+
+48) Identify alter command to add primary key on empno fiend
+
+A) Alter table table_name modify primary key(empno)
+B) Alter table table_name add empno int primary key
+C) Alter table table_name add primary key(empno)
+D) Alter table table_name add empno primary key int
+
+49) Identify valid update command below
+
+A) Update table table_name set field1=new value
+
+B) Update table_name set field1=new_valule where condition
+
+c) Update table_name modify field1=new_Value where condition
+
+D) Update table_name assign field1=new_value where condition
+
+50) What is the difference between DELETE and TRUNCATE commands
+
+A) Delete command used to delete particular records where Truncate used to delete all records
+
+B) Truncate is more powerful than Delete command
+
+C) By using delete command we can rollback the records, but by using Truncate command we cannot rollback records
+
+D) Delete and Truncate functionality same no change 
+
+51) What is Referential Integrity 
+
+A) Ensures that each row can be uniquely identified by an attribute called the primary key. The primary key column contains unique value in all the rows. This column cannot be NULL.
+
+B) Ensures that only a valid range of values is stored in a column. It can be enforced by restricting the type of data.  For suppose the dept field need to contain the list of values as 'computers' or 'physics' or 'maths' then it is coming under the part of domain integrity. 
+
+C) Ensures that the values of the foreign key match the values of the corresponding primary key. 
+
+D) Refers to a set of rules specified by a user, which do not belong to the entity, domain and referential integiry categories. 
+
+52) Which keyword allows you to eliminate duplicate entries at the time of display
+
+A) DELETE B) DISTINCT C) ALTER D) DROP 
+
+53) Which join produces cartician product of two given tables 
+
+A) INNER JOIN B) OUTER JOIN C) SELF JOIN D) CROSS JOIN
+
+54. Which of the following code is used to get an attribute in a HTTP Session object in servlets?
+A. session.getAttribute(String name)
+B. session.alterAttribute(String name)
+C. session.updateAttribute(String name)
+D. session.setAttribute(String name)
+
+55. Which method is used to specify before any lines that uses the PintWriter?
+A. setPageType()
+B. setContextType()
+C. setContentType()
+D. setResponseType()
+
+56. What are the functions of Servlet container?
+A. Lifecycle management
+B. Communication support
+C. Multithreading support
+D. All of the above
+
+58. Which object of HttpSession can be used to view and manipulate information about a session?
+A. session identifier
+B. creation time
+C. last accessed time
+D. All mentioned above
+
+59. Which of the following is true about servlets?
+A. Servlets execute within the address space of web server
+B. Servlets are platform-independent because they are written in java
+C. Servlets can use the full functionality of the Java class libraries
+D. Servlets execute within the address space of web server, platform independent and uses the functionality of java class libraries
+
+60. Which methods are used to bind the objects on HttpSession instance and get the objects?
+A. setAttribute
+B. getAttribute
+C. Both A & B
+D. None of the above
+
+61. Which method take a string not a URL?
+A. sendRedirect
+B. forward
+C. Both
+D. None
+
+62. RequestDispatcher object is used
+A. to include other resources
+B. to include an image
+C. to include xml object
+D. to include e-mailing response
+
+63. Which of the following are interface? 1. ServletContext 2. Servlet 3. GenericServlet 4. HttpServlet
+A. 1,2,3,4
+B. 1,2
+C. 1,3,4
+D. 1,4
+
+64. The life cycle of a servlet is managed by
+A. servlet context
+B. servlet container
+C. the supporting protocol (such as http or https)
+D. All of the above
+
+65. Which of the following method sets application/context init parameter?
+A. setParameter(String name,String value)
+B. Its not possible in the method
+C. setParameter(String name,Object value)
+D. setParameter(Object name,Object value)
+
+66. Which method shows the client what server is receiving?
+A. doGet
+B. doOption
+C. doTrace
+D. doPost
+
+64. How constructor can be used for a servlet?
+a) Initialization
+b) Constructor function
+c) Initialization and Constructor function
+d) Setup() method
+
+65) Which of the following is true about servlets?
+a) Servlets execute within the address space of web server
+b) Servlets are platform-independent because they are written in java
+c) Servlets can use the full functionality of the Java class libraries
+d) Servlets execute within the address space of web server, platform independent and uses the functionality of java class libraries
+
+66. Which are the session tracking techniques?
+i. URL rewriting
+ii. Using session object
+iii.Using response object
+iv. Using hidden fields
+v. Using cookies
+vi. Using servlet object
+a) i, ii, iii, vi
+b) i, ii, iv, v
+c) i, vi, iii, v
+d) i, ii, iii, v
+
+67. the SQL tag library operate on a data source defined by the
+a) javax.servlet.jsp.jstl.sql.DataSource
+b) InitContext
+c) java.sql.DataSource
+d) None
+
+68) The <c:forEach> action is probably one of the most useful actions provided by the JSTL thatenables its body content to be processed a number of times.item attribute are not taking referrence of  
+a) Array
+b) dataSource
+c) A string of comma-separated values
+d) None
+
+69) which one is the correct include core jstl library
+a) <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+b) <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+c) <%@ taglib uri="http://java.sun.com/jsf/core" prefix="c" %>
+d) None
+
+70. In JSP Action tags which tags are used for bean development?
+a) jsp:useBean
+b) jsp:setPoperty
+c) jsp:getProperty
+d) All of above
+
+71) Which of the following is true about <jsp:getProperty> action?
+A) The getProperty action gets the properties of a bean.
+B) The getProperty action converts the property of a bean to a string, and finally inserts it into the output.
+C) Both of the above.
+D) None of the above.
+
+72) JSTL Stands for
+a) JSP Tag Library
+b) JavaServer Pages Standard Tag Library
+c) Java Standard Tag Library
+d) None of the above.
+
+73) JSTL Core tag used to declare and assign variable value
+A) assign b) set c) let d) var
+
+74) Which of the following is correct for directive in JSP?
+a) <%@directive%>
+b) <%directive%>
+c) <%!directive%>
+d) None of the above
+
+75) JSTL tag to work as switch case is 
+A) switch B) case D) choice d) choose 
+
+76) Identify correct syntax to create a bean
+a) <jsp:useBean id=”bean1” class=”HelloWorld” />
+b) <jsp:useBean class=”bean1” src=”HelloWorld” />
+c) <jsp:use id=”bean1” class=”HelloWorld” />
+d) <jsp:useBean id=”bean1” src=”bean1” />
+
+77) What is FacesContext in JSF
+
+a) JSF defines the javax.faces.context.FacesContext abstract base class for representing all of the contextual information associated with processing an incoming request, and creating the corresponding response.
+b) A FacesContext instance is created by the JSF implementation, prior to beginning the request processing lifecycle, by a call to the getFacesContext method of FacesContextFactory, as described in Section 6.6 “FacesContextFactory”.
+c) A FacesContext instance is associated with a particular request at the beginning of request processing, by a call to the getFacesContext() method of the FacesContextFactory instance associated with the current web application
+d) all the above
+
+77) How to redirect to page directly
+a) "home.jsp?redirect=true" 
+b) "home.jsp?faces-redirect:true"
+c) "home.jsp?faces-redirect=true";
+d) "home.jsp?faces-redirect-true"
+
+78) How to write an action tag 
+a) "#{edao.showEmploy()}"
+b) "#(edao.showEmploy())"
+c) "#{edao(showEmploy())}"
+d) None 
+
+79) How to Create an object for adding message to faces-context
+a) context.addMessage(null, new FacesMessage("Unknown login"));
+b) FacesContext.getCurrentInstance().addMessage(clientId, facesMessage);
+c) FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, stringMessage, stringMessage);
+d) All the Above
+
+80) Identify Correct Syntax for dropdown
+
+A) <h:selectOneMenu value="#{user.favCoffee1}">
+   	<f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+   	<f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+   	<f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+</h:selectOneMenu>
+
+B) <h:selectMenu value="#{user.favCoffee1}">
+   	<f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+   	<f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+   	<f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+</h:selectMenu>
+
+C) <h:selectAnyMenu value="#{user.favCoffee1}">
+   	<f:selectItem itemValue="Cream Latte" itemLabel="Coffee3 - Cream Latte" />
+   	<f:selectItem itemValue="Extreme Mocha" itemLabel="Coffee3 - Extreme Mocha" />
+   	<f:selectItem itemValue="Buena Vista" itemLabel="Coffee3 - Buena Vista" />
+</h:selectAnyMenu>
+
+D) All the Above
+
+81) Identify correct syntax for Radio Button
+
+a) <h:selectRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Color1 - Red" />
+   	<f:selectItem itemValue="Green" itemLabel="Color1 - Green" />
+   	<f:selectItem itemValue="Blue" itemLabel="Color1 - Blue" />
+</h:selectRadio>
+
+b) <h:selectOneRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Color1 - Red" />
+   	<f:selectItem itemValue="Green" itemLabel="Color1 - Green" />
+   	<f:selectItem itemValue="Blue" itemLabel="Color1 - Blue" />
+</h:selectRadio>
+
+c) <h:selectOneRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Color1 - Red" />
+   	<f:selectItem itemValue="Green" itemLabel="Color1 - Green" />
+   	<f:selectItem itemValue="Blue" itemLabel="Color1 - Blue" />
+</h:selectOneRadio>
+
+d) all
+
+82) Identify correct Syntax for TextField 
+
+a) <h:inputText id="username" value="#{user.name}" label="username" maxlength="10"            
+size="15" alt="username" autocomplete="off" readonly="false" required="true"              
+requiredMessage="Username is required" style="color:red" accesskey="q">  
+    </h:inputText>  
+
+b) <h:inputText id="username" value="#{user.name}" label="username" maxlength="10"            
+size="15" alt="username" autocomplete="off" readonly="false" required="true"              
+requiredMessage="Username is required" style="color:red" accesskey="q" />  
+
+c) <h:inputText id="username" value="#{user.name}" label="username" maxlength="10"            
+requiredMessage="Username is required" style="color:red" />  
+
+d) All
+
+83) Identify Checkbox Syntax
+
+a) <h:selectManyCheckbox value="#{userData.data}">
+   <f:select itemValue="1" itemLabel="Item 1" />
+   <f:select itemValue="2" itemLabel="Item 2" />
+</h:selectManyCheckbox>
+
+b) <h:selectCheckbox value="#{userData.data}">
+   <f:selectItem itemValue="1" itemLabel="Item 1" />
+   <f:selectItem itemValue="2" itemLabel="Item 2" />
+</h:selectCheckbox>
+
+c) <h:selectManyCheckbox value="#{userData.data}">
+   <f:selectItem itemValue="1" itemLabel="Item 1" />
+   <f:selectItem itemValue="2" itemLabel="Item 2" />
+</h:selectManyCheckbox>
+
+d) None
+
+84) What is correct syntax for managed-bean xml
+
+a) <managed-bean>
+	<managed-bean-name>calculation</managed-bean-name>
+   <managed-bean-class>com.java.jsf.Calculation</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+b) <managedbean>
+	<managed-bean-name>calculation</managed-bean-name>
+   <managed-bean-class>com.java.jsf.Calculation</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+</managedbean>
+
+c) <managed-bean>
+	<managed-bean-name>calculation</managed-bean-name>
+</managed-bean>
+
+d) None 
+
+85) What is the correct data-table syntax
+
+a) <h:dataTable value="#{product.productList}" var="p">  
+
+b) <h:dataTable value="#{product.jsp}" var="p">  
+
+c) <h:dataTable value="#{productList}" var="p">  
+
+d) All
+
+86) Identify correct syntax for Message in JSF
+
+a)  <h:messages style="color:red;margin:8px;" />
+b) <h:message for="username" style="color:red" />
+c) <h:message for="form:username" style="color:red" />
+d) All
+
+87)  Which of the following is not an advantage of using Hibernate Query Language?
+a) Database independent
+b) Easy to write query
+c) No need to learn SQL
+d) Difficult to implement
+
+88) Which file contains all the configuration information about hibernate 
+
+a) hibernate.hbm.xml
+b) hibernate.cfg.xml
+c) hibernate.xml.hbm
+d) hibernate.cfg
+
+89) Which of the following is not an advantage of Hibernate Criteria API?
+a) Allows to use aggregate functions
+b) Cannot order the result set
+c) Allows to fetch only selected columns of result
+d) Can add conditions while fetching results
+
+90) What is the purpose of Hibernate's SessionFactory? 
+a) To create and manage database connections 
+b) To define database schemas 
+c) To provide a mapping between Java classes and database tables 
+d) To handle database transactions 
+
+91) What is the purpose of Hibernate's Session object? 
+a) To execute SQL queries 
+b) To perform database CRUD operations 
+c) To manage database transactions 
+d) To define Hibernate entity mappings 
+
+92) What is the default primary key generation strategy provided by Hibernate? 
+a) AUTO 
+b) IDENTITY 
+c) SEQUENCE 
+d) TABLE 
+
+93) What is lazy loading in Hibernate? 
+a) Loading data from the database only when needed 
+b) Loading all data eagerly during initialization 
+c) Loading data in a separate thread 
+d) Loading data from a cache 
+
+94)  Which Hibernate mapping type is used to represent a one-to-many association? 
+a) @OneToMany 
+b) @ManyToOne 
+c) @OneToOne 
+d) @ManyToMany 
+
+95)  Which annotation is used to map a Java class to a database table in Hibernate? 
+a) @Entity 
+b) @Table 
+c) @Column 
+d) @Id 
+
+96)  What is the purpose of Hibernate's Dialect class? 
+a) To define database schemas 
+b) To create database connections 
+c) To handle database transactions 
+d) To provide database-specific SQL dialects 
+
+97) What is the role of Hibernate's Transaction object? 
+a) To execute SQL queries 
+b) To manage database connections 
+c) To handle database transactions
+d) To define Hibernate entity mappings 
+
+98) What is the purpose of Hibernate's Criteria API? 
+a) To define database schemas 
+b) To perform database CRUD operations 
+c) To execute SQL queries 
+d) To build type-safe queries using Java code 
+
+99) Which configuration method is used to obtain a Hibernate SessionFactory object? 
+a) configure() 
+b) buildSessionFactory() 
+c) createSessionFactory() 
+d) getSessionFactory() 
+
+100) What is an ORM stands for? 
+a) Object Rate Mapping
+b) Object Relational Mapping
+c) Operating Related Mapping
+d) Operating Rate Mapping
+
+101) Which of the following is not a state of object in Hibernate? 
+a) Attached state
+b) Detached state
+c) Persistent state
+d) Transient state
+
+102)   Which services are provided to EJB components by the EJB container?
+
+a. Transaction support
+b. Persistence support
+c. Naming support
+d. All mentioned above
+
+103)   Which case of a session bean obtains the UserTransaction object via the EJBContext using the getUserTransaction() method in EJB transaction management?
+a. Bean-managed transactions
+b. Container-managed transactions
+c. Both A & B
+d. None of the above
+
+104)   EJB QL is a Query Language provided for navigation across a network of enterprise beans and dependent objects defined by means of container managed persistence.
+
+a. True
+b. False
+c. None
+d. Not Justified
+
+105)   A message driven bean is like statefull session bean that encapsulates the business logic and doesn't maintain state.
+a. True
+b. False
+c. None
+d. Error
+
+106)   Abbreviate the term JMS?
+
+a. Java Message Service
+b. Java Monitor Service
+c. Java Message Session
+d. Java Monitor Session
+
+107)   Which session bean maintain their state between client invocations but are not required to maintain their state across server crashes or shutdowns?
+a. Stateful Session Bean
+b. Stateless Session Bean
+c. Singleton Session Bean
+d. None of the above
+
+108)   Which EJB container must provide an implementation of Java Naming and Directory Interface (JNDI) API to provide naming services for EJB clients and components?
+
+a. Transaction support
+b. Persistence support
+c. Naming support
+d. All mentioned above
+
+109)   Which component does the Entity bean represent the persistent data stored in the database?
+- Published on 20 Jul 15
+
+a. Server-side component
+b. Client-side component
+c. server and client side component
+d. None of the above
+
+110) What represents a persistent global data from the database?
+- Published on 16 Jul 15
+
+a. Entity Bean
+b. Session Bean
+c. Both A & B
+d. None of the above
+
+111) Which component does the Entity bean represents the persistent data stored in the database?
+a. Server-side component
+b. Client-side component
+c. server and client side component
+d. None of the above
+
+112)   Which server-side component is required to be deployed on the server?
+
+a. EJB
+b. RMI
+c. Both A & B
+d. None of the above
+
+113)   How many types of session beans are available in EJB?
+
+a. 2
+b. 3
+c. 4
+d. 5
+
+114)   Which type of instances retain no data or conversational state for a specific client?
+
+a. Message-Driven Bean
+b. Session Bean
+c. Entity Bean
+d. None of the above
+
+115)   Which middleware services are provided by EJB?
+
+a. Security
+b. Transaction Management
+c. Both A & B
+d. None of the above
+
+116)   Which session bean does the conversational state between multiple method calls is not maintained by the container?
+
+a. Stateful Session Bean
+b. Stateless Session Bean
+c. Singleton Session Bean
+d. None of the above
+
+117. Which of the following annotation is used to specify or inject a dependency as ejb instance into another ejb?
+A. javax.ejb.Stateless  B. javax.ejb.Stateful
+C. javax.ejb.MessageDrivenBean D. javax.ejb.EJB
+
+118) The EJB specification architecture does NOT define
+A. transactional components B. client side security and encryption C. distributed object components D. server-side components
+
+119) Which of the following is true?
+A. Preserving of any state across method calls does not performed by Stateless session beans
+B. Multiple users can access Stateful session beans at the same time
+C. Both are correct
+D. None
+
+120) Which EJB container must provide an implementation of Java Naming and Directory Interface (JNDI) API to provide naming services for EJB clients and components?
+A. Transaction support
+B. Persistence support
+C. Naming support
+D. All mentioned above
+
+
+121. Which statement about session beans is true?
+A. In both stateless and statefull session classes, the bean provider must write the method public void remove()
+B. The method << remove >> in the component interface can be accessed only by the remote clients
+C. The bean's handle must be provided by the client, in order to ask the EJBHome for removing a session bean
+D. None
+
+122. What command used to Undo the changes on file before it has committed
+
+a) git undo filename
+b) git stash filename
+c) git checkout filename
+d) git rebase filename
+
+123. How to change to branch in git
+
+a) git checkout branch_name
+b) git branch branch_name
+c) git rebase branch_name
+d) None
+
+124) How to Unstage a file in git
+
+a) Git reset head fileName
+b) git head file_name
+c) git checkout head filename
+d) None
+
+125) what happens if you dont give message in git commit 
+
+a) message not mandetory
+b) it asks to enter message in vi editor
+c) it takes default message
+d) all the above
+
+126) When the sprint execution completed 
+
+a) Starts after spring planning and ends before the sprint review 
+b) After Daily Standup Meeting
+c) After Spring Retrospective Meeting
+d) All the Above
+
+127) When the retrospective meeting to be held
+
+a) Starts after spring planning and ends before the sprint review 
+b) After Daily Standup Meeting
+c) After Spring Retrospective Meeting
+d) End of each sprint meeting 
+
+128) Agile Projects Progress can be measured in 
+
+a)   Sprint Cycles 
+b) After Daily Standup Meeting
+c) After Product Backlog complete
+d) Before Sprint Backlog
